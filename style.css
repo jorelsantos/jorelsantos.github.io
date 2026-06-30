@@ -1,0 +1,8 @@
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: #18181b;
+  color: #ffffff;
+}
