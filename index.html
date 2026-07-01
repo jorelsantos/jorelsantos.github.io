@@ -24,8 +24,11 @@
 <body class="bg-white text-ink font-sans antialiased">
 
   <!-- Nav -->
-  <header class="max-w-3xl mx-auto px-6 pt-10 pb-6 flex items-center justify-between">
-    <a href="#" class="font-semibold tracking-tight">Jor-El Santos</a>
+  <header class="max-w-5xl mx-auto px-6 pt-10 pb-6 flex items-center justify-between">
+    <div class="flex items-baseline gap-3">
+      <a href="#" class="font-semibold tracking-tight">Jor-El Santos</a>
+      <a href="mailto:jorsanto@umich.edu" class="hidden sm:inline text-sm text-zinc-400 hover:text-ink transition-colors">jorsanto@umich.edu</a>
+    </div>
     <nav class="flex gap-5 text-sm text-zinc-500">
       <a href="#work" class="hover:text-ink transition-colors">Work</a>
       <a href="mailto:jorsanto@umich.edu" class="hover:text-ink transition-colors">Contact</a>
@@ -33,21 +36,19 @@
   </header>
 
   <!-- Hero -->
-  <main class="max-w-3xl mx-auto px-6">
-    <section class="py-10 sm:py-14">
-      <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight">
+  <main>
+    <section class="max-w-5xl mx-auto px-6 py-10 sm:py-14 text-center">
+      <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight sm:whitespace-nowrap">
         Building at the edge of data, research, and product.
       </h1>
-      <p class="mt-4 text-zinc-600 leading-relaxed max-w-xl">
+      <p class="mt-4 text-zinc-600 leading-relaxed max-w-xl mx-auto">
         I'm a Master's student at the University of Michigan School of Information,
         working on applied AI and data projects in research and ed-tech. Starting
         product management recruiting in July 2026 — exploring rotational APM programs.
       </p>
-      <div class="mt-6 flex flex-wrap gap-3 text-sm">
+      <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
         <a href="https://github.com/jorelsantos" target="_blank" rel="noopener"
            class="px-4 py-2 rounded-full bg-ink text-white hover:bg-zinc-700 transition-colors">GitHub</a>
-        <a href="mailto:jorsanto@umich.edu"
-           class="px-4 py-2 rounded-full border border-zinc-300 hover:border-zinc-400 transition-colors">Email</a>
         <!-- TODO: replace with your real LinkedIn URL -->
         <a href="https://www.linkedin.com/in/jor-el-santos" target="_blank" rel="noopener"
            class="px-4 py-2 rounded-full border border-zinc-300 hover:border-zinc-400 transition-colors">LinkedIn</a>
@@ -58,7 +59,7 @@
     </section>
 
     <!-- Work -->
-    <section id="work" class="py-10 border-t border-zinc-200">
+    <section id="work" class="max-w-3xl mx-auto px-6 py-10 border-t border-zinc-200">
       <h2 class="text-sm font-medium uppercase tracking-wider text-zinc-400 mb-6">Selected work</h2>
 
       <!-- Featured card: manually flagged. To feature a different project, move its <details> block
@@ -207,7 +208,7 @@
       </div>
     </section>
 
-    <footer class="py-12 text-sm text-zinc-400 flex items-center justify-between border-t border-zinc-200 mt-4">
+    <footer class="max-w-3xl mx-auto px-6 py-12 text-sm text-zinc-400 flex items-center justify-between border-t border-zinc-200 mt-4">
       <span>© 2026 Jor-El Santos</span>
       <a href="mailto:jorsanto@umich.edu" class="hover:text-ink transition-colors">jorsanto@umich.edu</a>
     </footer>
