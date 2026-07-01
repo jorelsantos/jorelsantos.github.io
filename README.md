@@ -10,6 +10,5 @@ Just edit `index.html` and push to `main`. Pages redeploys automatically in
 
 ## TODO
 
-- [ ] Swap the LinkedIn and X/Twitter links in `index.html` (search for `TODO`) for your real profile URLs.
 - [ ] Add a `resume.pdf` to this repo and link it from the nav once you have a polished resume ready.
 - [ ] Add real screenshots/links for each project once repos are public.
