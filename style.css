@@ -48,22 +48,6 @@ html {
   padding: 1.5rem;
 }
 
-.accent {
-  flex: 0 0 auto;
-  width: 2.5rem;
-  height: 2.5rem;
-  border-radius: 0.65rem;
-}
-
-.card--featured .accent {
-  width: 3.25rem;
-  height: 3.25rem;
-}
-
-.accent-1 { background: linear-gradient(135deg, #d4d4d8, #52525b); }
-.accent-2 { background: linear-gradient(135deg, #a1a1aa, #71717a); }
-.accent-3 { background: linear-gradient(135deg, #e4e4e7, #a1a1aa); }
-
 .card-heading {
   flex: 1 1 auto;
   min-width: 0;
