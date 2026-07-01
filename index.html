@@ -177,6 +177,39 @@
           </div>
         </details>
 
+        <details class="card group">
+          <summary>
+            <span class="accent accent-2"></span>
+            <span class="card-heading">
+              <h3 class="font-semibold text-lg">NBA Players Are Getting Leaner, Faster</h3>
+              <p class="teaser">A normalized SQL database of ~3,000 NBA players, built to test a hunch about how player builds are changing.</p>
+              <span class="tags">SQL · relational database design · DataGrip · ERD</span>
+            </span>
+            <span class="chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="card-detail">
+            <p><strong>Context.</strong> Started with a raw dataset of roughly 3,000 NBA players and
+              wanted to actually design a proper relational database around it, not just query a flat
+              file — and use it to test whether player builds have shifted as the league has gotten more
+              athletic.</p>
+            <p><strong>What I did.</strong> Designed an ERD and built five normalized tables — players,
+              schools, teams, positions, and countries — deliberately choosing weight and years of NBA
+              experience as key fields over data like birthdate, and deliberately skipping a
+              name/name_id lookup table where the data had no duplicates to justify one.</p>
+            <p><strong>Results.</strong> Players with fewer than 6 years of NBA experience average 206
+              lbs, versus 217 lbs for players with 6+ years — a real signal that incoming players trend
+              leaner and faster than earlier cohorts. Separately, 317 of the ~3,000 players traced back
+              to Big Ten schools.</p>
+            <p><strong>What I learned.</strong> Normalization is a judgment call, not a default —
+              deciding *not* to split out a table (no name/name_id table, since there were no duplicate
+              names to protect against) was as much a design decision as deciding to split one out.</p>
+            <p><strong>What excites me.</strong> Extending this toward health and performance data across
+              NBA eras — right now it captures build and experience, but the more interesting question is
+              how player conditioning has evolved from college into the pros.</p>
+            <!-- TODO: link a repo once the SQL/schema is cleaned up for public sharing -->
+          </div>
+        </details>
+
       </div>
     </section>
 
