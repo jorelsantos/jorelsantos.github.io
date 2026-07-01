@@ -61,48 +61,86 @@
     <!-- Work -->
     <section id="work" class="py-10 border-t border-zinc-200">
       <h2 class="text-sm font-medium uppercase tracking-wider text-zinc-400 mb-6">Selected work</h2>
-      <div class="space-y-10">
 
-        <article class="group">
-          <div class="flex items-baseline justify-between gap-4">
-            <h3 class="font-semibold text-lg">Research Discovery Knowledge Graph</h3>
-            <span class="text-xs text-zinc-400 whitespace-nowrap">2026 — ongoing</span>
-          </div>
-          <p class="mt-2 text-zinc-600 leading-relaxed">
-            Research assistant under Prof. Libby Hemphill (UMSI / ICPSR), building a knowledge
-            graph that connects research datasets across ICPSR, PhysioNet, DataCite, and OpenAlex.
-            Grounding an LLM interface in the graph so researchers can find related datasets and
-            papers instead of guessing keywords — aimed at instructors and evidence-seekers in
-            the social sciences.
-          </p>
-          <p class="mt-2 text-xs text-zinc-400">Python · Neo4j · LLM grounding · research tooling</p>
-        </article>
+      <!-- Featured card: manually flagged. To feature a different project, move its <details> block
+           here and move this one down into the .grid below (see plan: Featured is a manual flag). -->
+      <details class="card card--featured group mb-5">
+        <summary>
+          <span class="accent accent-1"></span>
+          <span class="card-heading">
+            <span class="badge badge--featured">Featured</span>
+            <h3 class="font-semibold text-lg mt-1">Research Discovery Knowledge Graph</h3>
+            <p class="teaser">Grounding an LLM in a research-dataset graph so discovery beats keyword guessing.</p>
+            <span class="tags">Python · Neo4j · LLM grounding · research tooling</span>
+          </span>
+          <span class="chevron" aria-hidden="true"></span>
+        </summary>
+        <div class="card-detail">
+          <p><strong>Context.</strong> Research assistant under Prof. Libby Hemphill (UMSI / ICPSR), where
+            researchers routinely can't find related datasets across ICPSR, PhysioNet, DataCite, and
+            OpenAlex because there's no shared discovery layer between them.</p>
+          <p><strong>What I did.</strong> Building a knowledge graph connecting datasets across those
+            archives, then grounding an LLM interface in that graph so a researcher can ask for a topic
+            or dataset and get back genuinely related work — instructors and evidence-seekers in the
+            social sciences are the target users.</p>
+          <p><strong>Results.</strong> <!-- TODO: add a concrete result once the graph/tool has usage or eval data --> In progress — early graph construction and grounding work underway.</p>
+          <p><strong>What I learned.</strong> <!-- TODO: fill in once you've reflected on this --></p>
+          <p><strong>What excites me.</strong> <!-- TODO: fill in --></p>
+          <!-- TODO: link once the tool has a public demo or repo -->
+        </div>
+      </details>
 
-        <article class="group">
-          <div class="flex items-baseline justify-between gap-4">
-            <h3 class="font-semibold text-lg">Center for Academic Innovation — Michigan Online</h3>
-            <span class="text-xs text-zinc-400 whitespace-nowrap">2025 — ongoing</span>
-          </div>
-          <p class="mt-2 text-zinc-600 leading-relaxed">
-            Programming & research assistant analyzing enrollment, completion, and engagement
-            data across Michigan Online's course catalog (400+ courses) to surface retention
-            and demand insights for the team.
-          </p>
-          <p class="mt-2 text-xs text-zinc-400">SQL · Python · Salesforce data</p>
-        </article>
+      <div class="grid">
 
-        <article class="group">
-          <div class="flex items-baseline justify-between gap-4">
-            <h3 class="font-semibold text-lg">Citation Network of Kohlberg's Moral Development Theory</h3>
-            <span class="text-xs text-zinc-400 whitespace-nowrap">SI 507, Michigan</span>
+        <details class="card group">
+          <summary>
+            <span class="accent accent-2"></span>
+            <span class="card-heading">
+              <h3 class="font-semibold text-lg">Center for Academic Innovation — Michigan Online</h3>
+              <p class="teaser">Turning Michigan Online's course data into retention signal.</p>
+              <span class="tags">SQL · Python · Salesforce data</span>
+            </span>
+            <span class="chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="card-detail">
+            <p><strong>Context.</strong> Michigan Online runs 400+ courses through the Center for
+              Academic Innovation, with enrollment and engagement data scattered across Salesforce.</p>
+            <p><strong>What I did.</strong> Programming and research assistant work analyzing enrollment,
+              completion, and engagement data across the catalog to surface retention and demand
+              insights for the team.</p>
+            <p><strong>Results.</strong> <!-- TODO: add a concrete result/metric --></p>
+            <p><strong>What I learned.</strong> <!-- TODO: fill in --></p>
+            <p><strong>What excites me.</strong> <!-- TODO: fill in --></p>
+            <!-- No link: the underlying code isn't shareable, so this card intentionally has no <a>. -->
           </div>
-          <p class="mt-2 text-zinc-600 leading-relaxed">
-            Mapped how Lawrence Kohlberg's theory of moral development diffused from psychology
-            into education, philosophy, law, and AI ethics, using citation network analysis to
-            identify the bridge works and authors that carried the ideas across disciplines.
-          </p>
-          <p class="mt-2 text-xs text-zinc-400">Python · NetworkX · citation data</p>
-        </article>
+        </details>
+
+        <details class="card group">
+          <summary>
+            <span class="accent accent-3"></span>
+            <span class="card-heading">
+              <!-- TODO: confirm final project name/framing -->
+              <h3 class="font-semibold text-lg">Six Degrees of Kendrick Lamar</h3>
+              <p class="teaser">Citation-network analysis, reframed around tracing how ideas spread.</p>
+              <span class="tags">Python · NetworkX · citation data</span>
+            </span>
+            <span class="chevron" aria-hidden="true"></span>
+          </summary>
+          <div class="card-detail">
+            <p><strong>Context.</strong> Started as a Michigan course project mapping how Lawrence
+              Kohlberg's theory of moral development diffused from psychology into education,
+              philosophy, law, and AI ethics.</p>
+            <p><strong>What I did.</strong> Used citation network analysis to identify the bridge works
+              and authors that carried Kohlberg's ideas across disciplines — the same "how do ideas
+              travel through a network" question that's now the inspiration for a lyric/influence
+              network project centered on Kendrick Lamar's discography.
+              <!-- TODO: rewrite this section once the Kendrick project itself is underway --></p>
+            <p><strong>Results.</strong> <!-- TODO: add a concrete result --></p>
+            <p><strong>What I learned.</strong> <!-- TODO: fill in --></p>
+            <p><strong>What excites me.</strong> <!-- TODO: fill in --></p>
+            <!-- TODO: link a public repo once one exists -->
+          </div>
+        </details>
 
       </div>
     </section>
