@@ -1,0 +1,7 @@
+# Original camera exports — keep local; deploy only the optimized web/ copies
+assets/photos/*.JPG
+assets/photos/*.jpg
+assets/photos/*.jpeg
+assets/photos/*.png
+
+.DS_Store

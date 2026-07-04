@@ -7,198 +7,123 @@
 <meta name="description" content="Jor-El Santos — Product, data, and applied AI projects." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<script src="https://cdn.tailwindcss.com"></script>
-<script>
-  tailwind.config = {
-    theme: {
-      extend: {
-        fontFamily: { sans: ['Inter', 'ui-sans-serif', 'system-ui'] },
-        colors: { ink: '#18181b' }
-      }
-    }
-  }
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
 </head>
-<body class="bg-white text-ink font-sans antialiased">
+<body>
 
-  <!-- Nav -->
-  <header class="max-w-5xl mx-auto px-6 pt-10 pb-6 flex items-center justify-between">
-    <div class="flex items-baseline gap-3">
-      <a href="#" class="font-semibold tracking-tight">Jor-El Santos</a>
-      <a href="mailto:jorsanto@umich.edu" class="hidden sm:inline text-sm text-zinc-400 hover:text-ink transition-colors">jorsanto@umich.edu</a>
-    </div>
-    <nav class="flex gap-5 text-sm text-zinc-500">
-      <a href="#work" class="hover:text-ink transition-colors">Work</a>
-      <a href="mailto:jorsanto@umich.edu" class="hover:text-ink transition-colors">Contact</a>
+<div class="wrap">
+
+  <header class="nav">
+    <a href="#" class="brand">Jor-El Santos</a>
+    <nav class="navlinks">
+      <a href="#work">Work</a>
+      <a href="#photography">Photography</a>
+      <a href="mailto:jorsanto@umich.edu">Contact</a>
     </nav>
   </header>
 
-  <!-- Hero -->
   <main>
-    <section class="max-w-5xl mx-auto px-6 py-10 sm:py-14 text-center">
-      <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight sm:whitespace-nowrap">
-        Building at the edge of data, research, and product.
-      </h1>
-      <p class="mt-4 text-zinc-600 leading-relaxed max-w-xl mx-auto">
-        I'm a Master's student at the University of Michigan School of Information,
-        working on applied AI and data projects in research and ed-tech. Starting
-        product management recruiting in July 2026 — exploring rotational APM programs.
-      </p>
-      <div class="mt-6 flex flex-wrap justify-center gap-3 text-sm">
-        <a href="https://github.com/jorelsantos" target="_blank" rel="noopener"
-           class="px-4 py-2 rounded-full bg-ink text-white hover:bg-zinc-700 transition-colors">GitHub</a>
-        <a href="https://www.linkedin.com/in/jorelsantos/" target="_blank" rel="noopener"
-           class="px-4 py-2 rounded-full border border-zinc-300 hover:border-zinc-400 transition-colors">LinkedIn</a>
-        <a href="https://x.com/supermansdad" target="_blank" rel="noopener"
-           class="px-4 py-2 rounded-full border border-zinc-300 hover:border-zinc-400 transition-colors">X / Twitter</a>
+
+    <section class="hero">
+      <h1>Building at the edge of data, research, and product.</h1>
+      <p>I'm a Master's student at the University of Michigan School of Information, working on applied AI and data projects in research and ed-tech. Starting product management recruiting in July 2026 — exploring rotational APM programs.</p>
+      <div class="links">
+        <a href="https://github.com/jorelsantos" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/jorelsantos/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://x.com/supermansdad" target="_blank" rel="noopener">X</a>
+        <a href="mailto:jorsanto@umich.edu">Email</a>
       </div>
     </section>
 
-    <!-- Work -->
-    <section id="work" class="max-w-3xl mx-auto px-6 py-10 border-t border-zinc-200">
-      <h2 class="text-sm font-medium uppercase tracking-wider text-zinc-400 mb-6">Selected work</h2>
+    <section id="work">
+      <p class="section-label">Selected work</p>
 
-      <!-- Featured card: manually flagged. To feature a different project, move its <details> block
-           here and move this one down into the .grid below (see plan: Featured is a manual flag). -->
-      <details class="card card--featured group mb-5">
-        <summary>
-          <span class="card-heading">
-            <span class="badge badge--featured">Featured</span>
-            <h3 class="font-semibold text-lg mt-1">Research Discovery Knowledge Graph</h3>
+      <div class="worklist">
+
+        <details class="entry">
+          <summary>
+            <span class="chev"></span>
+            <h3 class="etitle">Research Discovery Knowledge Graph</h3>
             <p class="teaser">Grounding an LLM in a research-dataset graph so discovery beats keyword guessing.</p>
-            <span class="tags">Python · Neo4j · LLM grounding · research tooling</span>
-          </span>
-          <span class="chevron" aria-hidden="true"></span>
-        </summary>
-        <div class="card-detail">
-          <p><strong>Context.</strong> Research assistant under Prof. Libby Hemphill (UMSI / ICPSR), where
-            researchers routinely can't find related datasets across ICPSR, PhysioNet, DataCite, and
-            OpenAlex because there's no shared discovery layer between them.</p>
-          <p><strong>What I did.</strong> Building a knowledge graph connecting datasets across those
-            archives, then grounding an LLM interface in that graph so a researcher can ask for a topic
-            or dataset and get back genuinely related work — instructors and evidence-seekers in the
-            social sciences are the target users.</p>
-          <p><strong>Results.</strong> <!-- TODO: add a concrete result once the graph/tool has usage or eval data --> In progress — early graph construction and grounding work underway.</p>
-          <p><strong>What I learned.</strong> <!-- TODO: fill in once you've reflected on this --></p>
-          <p><strong>What excites me.</strong> <!-- TODO: fill in --></p>
-          <!-- TODO: link once the tool has a public demo or repo -->
-        </div>
-      </details>
-
-      <div class="grid">
-
-        <details class="card group">
-          <summary>
-            <span class="card-heading">
-              <h3 class="font-semibold text-lg">Center for Academic Innovation — Michigan Online</h3>
-              <p class="teaser">Turning Michigan Online's course data into retention signal.</p>
-              <span class="tags">SQL · Python · Salesforce data</span>
-            </span>
-            <span class="chevron" aria-hidden="true"></span>
+            <p class="tags">Python · Neo4j · LLM grounding · research tooling</p>
           </summary>
-          <div class="card-detail">
-            <p><strong>Context.</strong> Michigan Online runs 400+ courses through the Center for
-              Academic Innovation, with enrollment and engagement data scattered across Salesforce.</p>
-            <p><strong>What I did.</strong> Programming and research assistant work analyzing enrollment,
-              completion, and engagement data across the catalog to surface retention and demand
-              insights for the team.</p>
-            <p><strong>Results.</strong> <!-- TODO: add a concrete result/metric --></p>
-            <p><strong>What I learned.</strong> <!-- TODO: fill in --></p>
-            <p><strong>What excites me.</strong> <!-- TODO: fill in --></p>
-            <!-- No link: the underlying code isn't shareable, so this card intentionally has no <a>. -->
+          <span class="node" aria-hidden="true"></span>
+          <div class="detail">
+            <p><span class="lead">Context</span>Research assistant under Prof. Libby Hemphill (UMSI / ICPSR), where researchers routinely can't find related datasets across ICPSR, PhysioNet, DataCite, and OpenAlex because there's no shared discovery layer between them.</p>
+            <p><span class="lead">What I did</span>Building a knowledge graph connecting datasets across those archives, then grounding an LLM interface in that graph so a researcher can ask for a topic or dataset and get back genuinely related work — instructors and evidence-seekers in the social sciences are the target users.</p>
+            <p><span class="lead">Results</span>In progress — early graph construction and grounding work underway.</p>
+            <!-- TODO: What I learned — fill in once reflected on -->
+            <!-- TODO: What excites me — fill in -->
+            <!-- TODO: link once the tool has a public demo or repo -->
           </div>
         </details>
 
-        <details class="card group">
+        <details class="entry">
           <summary>
-            <span class="card-heading">
-              <!-- TODO: confirm final project name/framing -->
-              <h3 class="font-semibold text-lg">Six Degrees of Kendrick Lamar</h3>
-              <p class="teaser">Citation-network analysis, reframed around tracing how ideas spread.</p>
-              <span class="tags">Python · NetworkX · citation data</span>
-            </span>
-            <span class="chevron" aria-hidden="true"></span>
+            <span class="chev"></span>
+            <h3 class="etitle">Center for Academic Innovation — Michigan Online</h3>
+            <p class="teaser">Turning Michigan Online's course data into retention signal.</p>
+            <p class="tags">SQL · Python · Salesforce data</p>
           </summary>
-          <div class="card-detail">
-            <p><strong>Context.</strong> I wanted to trace how ideas actually spread through a network —
-              who the real bridges are, not just who's loudest — and I started that question on citation
-              data: how Lawrence Kohlberg's theory of moral development diffused from psychology into
-              education, philosophy, law, and AI ethics.</p>
-            <p><strong>What I did.</strong> Built a citation network and used it to identify the bridge
-              works and authors that carried Kohlberg's ideas across disciplines. That same "how do ideas
-              travel through a network" question is now the inspiration for a lyric/influence network
-              project centered on Kendrick Lamar's discography.
-              <!-- TODO: rewrite this section once the Kendrick project itself is underway --></p>
-            <p><strong>Results.</strong> <!-- TODO: add a concrete result --></p>
-            <p><strong>What I learned.</strong> <!-- TODO: fill in --></p>
-            <p><strong>What excites me.</strong> <!-- TODO: fill in --></p>
-            <!-- TODO: link a public repo once one exists -->
+          <span class="node" aria-hidden="true"></span>
+          <div class="detail">
+            <p><span class="lead">Context</span>Michigan Online runs 400+ courses through the Center for Academic Innovation, with enrollment and engagement data scattered across Salesforce.</p>
+            <p><span class="lead">What I did</span>Programming and research assistant work analyzing enrollment, completion, and engagement data across the catalog to surface retention and demand insights for the team.</p>
+            <!-- TODO: Results / What I learned / What excites me — fill in -->
+            <!-- No link: the underlying code isn't shareable. -->
           </div>
         </details>
 
-        <details class="card group">
+        <details class="entry">
           <summary>
-            <span class="card-heading">
-              <h3 class="font-semibold text-lg">Where Do UMSI Students Land?</h3>
-              <p class="teaser">8 years of career placement data, mined for what actually gets students hired.</p>
-              <span class="tags">Python · pandas · hypothesis testing · clustering</span>
-            </span>
-            <span class="chevron" aria-hidden="true"></span>
+            <span class="chev"></span>
+            <!-- TODO: confirm final project name/framing -->
+            <h3 class="etitle">Six Degrees of Kendrick Lamar</h3>
+            <p class="teaser">Citation-network analysis, reframed around tracing how ideas spread.</p>
+            <p class="tags">Python · NetworkX · citation data</p>
           </summary>
-          <div class="card-detail">
-            <p><strong>Context.</strong> UMSI's Career Development Office had 8 years of internship and
-              full-time placement survey data (2017-2024) sitting in two separate, messy files — nobody
-              had unified it to ask what actually predicts a good outcome. Team project with Tyler Tran
-              and Kenny Wang.</p>
-            <p><strong>What I did.</strong> Merged and cleaned 1,374 placement records into one dataset,
-              standardized organization names, and engineered a search-strategy category from free-text
-              survey responses. Ran chi-square tests on career stage vs. strategy and on pre/post-COVID
-              strategy shifts, a regression on strategy growth over time, and k-means/agglomerative
-              clustering to find distinct placement profiles.</p>
-            <p><strong>Results.</strong> Networking drove 25.7% of all placements — more than any other
-              method, and the gap was statistically significant (χ²(5) = 361.25, p &lt; 0.001). COVID
-              didn't reverse that pattern, it accelerated it (χ²(5) = 29.80, p &lt; 0.001): networking's
-              share of placements grew after COVID, not despite it. A small number of organizations,
-              led by the University of Michigan, Google, and Amazon, account for a disproportionate share
-              of the pipeline.</p>
-            <p><strong>What I learned.</strong> <!-- TODO: fill in --></p>
-            <p><strong>What excites me.</strong> Turning a messy institutional dataset into findings the
-              Career Development Office could actually act on — different advice for internship vs.
-              full-time seekers, and where to spend workshop time.</p>
+          <span class="node" aria-hidden="true"></span>
+          <div class="detail">
+            <p><span class="lead">Context</span>I wanted to trace how ideas actually spread through a network — who the real bridges are, not just who's loudest — and I started that question on citation data: how Lawrence Kohlberg's theory of moral development diffused from psychology into education, philosophy, law, and AI ethics.</p>
+            <p><span class="lead">What I did</span>Built a citation network and used it to identify the bridge works and authors that carried Kohlberg's ideas across disciplines. That same "how do ideas travel through a network" question is now the inspiration for a lyric/influence network project centered on Kendrick Lamar's discography.</p>
+            <!-- TODO: Results / What I learned / What excites me — fill in -->
+            <!-- CASE STUDY: this is the flagship case-study candidate. Add <span class="badge-cs">Case study</span> after the title and a <a class="readmore" href="case-studies/kendrick.html">Read the case study →</a> once the page has content. -->
+          </div>
+        </details>
+
+        <details class="entry">
+          <summary>
+            <span class="chev"></span>
+            <h3 class="etitle">Where Do UMSI Students Land?</h3>
+            <p class="teaser">8 years of career placement data, mined for what actually gets students hired.</p>
+            <p class="tags">Python · pandas · hypothesis testing · clustering</p>
+          </summary>
+          <span class="node" aria-hidden="true"></span>
+          <div class="detail">
+            <p><span class="lead">Context</span>UMSI's Career Development Office had 8 years of internship and full-time placement survey data (2017-2024) sitting in two separate, messy files — nobody had unified it to ask what actually predicts a good outcome. Team project with Tyler Tran and Kenny Wang.</p>
+            <p><span class="lead">What I did</span>Merged and cleaned 1,374 placement records into one dataset, standardized organization names, and engineered a search-strategy category from free-text survey responses. Ran chi-square tests on career stage vs. strategy and on pre/post-COVID strategy shifts, a regression on strategy growth over time, and k-means/agglomerative clustering to find distinct placement profiles.</p>
+            <p><span class="lead">Results</span>Networking drove 25.7% of all placements — more than any other method, and the gap was statistically significant (χ²(5) = 361.25, p &lt; 0.001). COVID didn't reverse that pattern, it accelerated it (χ²(5) = 29.80, p &lt; 0.001): networking's share of placements grew after COVID, not despite it. A small number of organizations, led by the University of Michigan, Google, and Amazon, account for a disproportionate share of the pipeline.</p>
+            <!-- TODO: What I learned — fill in -->
+            <p><span class="lead">What excites me</span>Turning a messy institutional dataset into findings the Career Development Office could actually act on — different advice for internship vs. full-time seekers, and where to spend workshop time.</p>
             <!-- TODO: link a repo or write-up once one is public -->
           </div>
         </details>
 
-        <details class="card group">
+        <details class="entry">
           <summary>
-            <span class="card-heading">
-              <h3 class="font-semibold text-lg">NBA Players Are Getting Leaner, Faster</h3>
-              <p class="teaser">A normalized SQL database of ~3,000 NBA players, built to test a hunch about how player builds are changing.</p>
-              <span class="tags">SQL · relational database design · DataGrip · ERD</span>
-            </span>
-            <span class="chevron" aria-hidden="true"></span>
+            <span class="chev"></span>
+            <h3 class="etitle">NBA Players Are Getting Leaner, Faster</h3>
+            <p class="teaser">A normalized SQL database of ~3,000 NBA players, built to test a hunch about how player builds are changing.</p>
+            <p class="tags">SQL · relational database design · DataGrip · ERD</p>
           </summary>
-          <div class="card-detail">
-            <p><strong>Context.</strong> Started with a raw dataset of roughly 3,000 NBA players and
-              wanted to actually design a proper relational database around it, not just query a flat
-              file — and use it to test whether player builds have shifted as the league has gotten more
-              athletic.</p>
-            <p><strong>What I did.</strong> Designed an ERD and built five normalized tables — players,
-              schools, teams, positions, and countries — deliberately choosing weight and years of NBA
-              experience as key fields over data like birthdate, and deliberately skipping a
-              name/name_id lookup table where the data had no duplicates to justify one.</p>
-            <p><strong>Results.</strong> Players with fewer than 6 years of NBA experience average 206
-              lbs, versus 217 lbs for players with 6+ years — a real signal that incoming players trend
-              leaner and faster than earlier cohorts. Separately, 317 of the ~3,000 players traced back
-              to Big Ten schools.</p>
-            <p><strong>What I learned.</strong> Normalization is a judgment call, not a default —
-              deciding *not* to split out a table (no name/name_id table, since there were no duplicate
-              names to protect against) was as much a design decision as deciding to split one out.</p>
-            <p><strong>What excites me.</strong> Extending this toward health and performance data across
-              NBA eras — right now it captures build and experience, but the more interesting question is
-              how player conditioning has evolved from college into the pros.</p>
+          <span class="node" aria-hidden="true"></span>
+          <div class="detail">
+            <p><span class="lead">Context</span>Started with a raw dataset of roughly 3,000 NBA players and wanted to actually design a proper relational database around it, not just query a flat file — and use it to test whether player builds have shifted as the league has gotten more athletic.</p>
+            <p><span class="lead">What I did</span>Designed an ERD and built five normalized tables — players, schools, teams, positions, and countries — deliberately choosing weight and years of NBA experience as key fields over data like birthdate, and deliberately skipping a name/name_id lookup table where the data had no duplicates to justify one.</p>
+            <p><span class="lead">Results</span>Players with fewer than 6 years of NBA experience average 206 lbs, versus 217 lbs for players with 6+ years — a real signal that incoming players trend leaner and faster than earlier cohorts. Separately, 317 of the ~3,000 players traced back to Big Ten schools.</p>
+            <p><span class="lead">What I learned</span>Normalization is a judgment call, not a default — deciding <em>not</em> to split out a table (no name/name_id table, since there were no duplicate names to protect against) was as much a design decision as deciding to split one out.</p>
+            <p><span class="lead">What excites me</span>Extending this toward health and performance data across NBA eras — right now it captures build and experience, but the more interesting question is how player conditioning has evolved from college into the pros.</p>
             <!-- TODO: link a repo once the SQL/schema is cleaned up for public sharing -->
           </div>
         </details>
@@ -206,11 +131,30 @@
       </div>
     </section>
 
-    <footer class="max-w-3xl mx-auto px-6 py-12 text-sm text-zinc-400 flex items-center justify-between border-t border-zinc-200 mt-4">
-      <span>© 2026 Jor-El Santos</span>
-      <a href="mailto:jorsanto@umich.edu" class="hover:text-ink transition-colors">jorsanto@umich.edu</a>
-    </footer>
+    <section id="photography">
+      <p class="section-label">Photography</p>
+      <p class="beyond-intro">Photographs I've taken around Metro Manila.</p>
+      <div class="gallery">
+        <img src="assets/photos/web/01.jpg" loading="lazy" alt="Photograph by Jor-El Santos, Metro Manila" />
+        <img src="assets/photos/web/02.jpg" loading="lazy" alt="Photograph by Jor-El Santos, Metro Manila" />
+        <img src="assets/photos/web/03.jpg" loading="lazy" alt="Photograph by Jor-El Santos, Metro Manila" />
+        <img src="assets/photos/web/04.jpg" loading="lazy" alt="Photograph by Jor-El Santos, Metro Manila" />
+        <img src="assets/photos/web/05.jpg" loading="lazy" alt="Photograph by Jor-El Santos, Metro Manila" />
+        <img src="assets/photos/web/06.jpg" loading="lazy" alt="Photograph by Jor-El Santos, Metro Manila" />
+        <img src="assets/photos/web/07.jpg" loading="lazy" alt="Photograph by Jor-El Santos, Metro Manila" />
+        <img src="assets/photos/web/08.jpg" loading="lazy" alt="Photograph by Jor-El Santos, Metro Manila" />
+        <img src="assets/photos/web/09.jpg" loading="lazy" alt="Photograph by Jor-El Santos, Metro Manila" />
+      </div>
+    </section>
+
   </main>
+
+  <footer>
+    <span>© 2026 Jor-El Santos</span>
+    <a href="mailto:jorsanto@umich.edu">jorsanto@umich.edu</a>
+  </footer>
+
+</div>
 
 </body>
 </html>
