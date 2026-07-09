@@ -1,12 +1,15 @@
 :root {
-  --ground: #F2F3EF;
-  --panel: #FBFBF8;
-  --ink: #181A17;
-  --ink-soft: #565A54;
-  --ink-faint: #8C8F86;
-  --line: #DBDCD4;
-  --line-soft: #E7E8E1;
-  --accent: #234B3E;
+  color-scheme: dark;
+
+  /* Flexoki Dark (stephango.com/flexoki) */
+  --ground: #100F0F;     /* black */
+  --panel: #1C1B1A;      /* base-950 */
+  --ink: #CECDC3;        /* base-200 */
+  --ink-soft: #878580;   /* base-500 */
+  --ink-faint: #6F6E69;  /* base-600 */
+  --line: #282726;       /* base-900 */
+  --line-soft: #343331;  /* base-850 */
+  --accent: #3AA99F;     /* cyan-400 */
 
   --serif: "Newsreader", Georgia, "Times New Roman", serif;
   --sans: "Public Sans", ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
@@ -31,7 +34,7 @@ body {
   text-rendering: optimizeLegibility;
 }
 
-::selection { background: var(--accent); color: #ffffff; }
+::selection { background: var(--accent); color: #100F0F; }
 
 img { max-width: 100%; }
 
@@ -53,7 +56,8 @@ header.nav {
 .brand {
   font-family: var(--serif);
   font-size: 1.2rem;
-  letter-spacing: 0.01em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   text-decoration: none;
   color: var(--ink);
 }
@@ -73,12 +77,12 @@ header.nav {
 .hero h1 {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(2.5rem, 6vw, 4rem);
+  font-size: clamp(2.3rem, 6vw, 4rem);
   line-height: 1.05;
   letter-spacing: -0.01em;
   text-wrap: balance;
   margin: 0 0 1.6rem;
-  max-width: 20ch;
+  max-width: 24ch;
 }
 .hero p {
   max-width: var(--measure);
@@ -100,14 +104,15 @@ header.nav {
 .links a:focus-visible::after { right: 0; }
 .links a:focus-visible { outline: none; }
 
-/* ---- section label ---- */
-.section-label {
-  font-family: var(--mono);
-  font-size: 0.72rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--ink-faint);
-  margin: 0 0 2.2rem;
+/* ---- section heading ---- */
+.section-head {
+  font-family: var(--serif);
+  font-weight: 500;
+  font-size: clamp(1.6rem, 3.5vw, 2.1rem);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin: 0 0 2rem;
   padding-top: 3rem;
   border-top: 1px solid var(--line);
 }
@@ -135,7 +140,7 @@ header.nav {
 .node {
   position: absolute;
   left: -1.9rem;
-  top: 2.7rem;
+  top: 2.85rem;
   width: 6px; height: 6px;
   border-radius: 50%;
   background: var(--ground);
@@ -144,8 +149,16 @@ header.nav {
 }
 .entry[open] .node,
 .entry > summary:hover ~ .node,
-.entry > summary:focus-visible ~ .node { border-color: var(--ink); background: var(--ink); }
+.entry > summary:focus-visible ~ .node { border-color: var(--accent); background: var(--accent); }
 
+.year {
+  font-family: var(--mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 0.5rem;
+}
 .etitle {
   font-family: var(--serif);
   font-weight: 500;
@@ -160,37 +173,10 @@ header.nav {
 .teaser { color: var(--ink-soft); font-size: 1rem; margin: 0.55rem 0 0; max-width: var(--measure); }
 .tags { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.01em; color: var(--ink-faint); margin-top: 0.7rem; }
 
-/* case-study badge + read-more (switch on per project once its case-study page exists) */
-.badge-cs {
-  display: inline-block;
-  font-family: var(--mono);
-  font-size: 0.6rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  border-radius: 2px;
-  padding: 0.12rem 0.42rem;
-  margin-left: 0.7rem;
-  vertical-align: 0.15em;
-  white-space: nowrap;
-}
-.readmore {
-  display: inline-block;
-  margin-top: 1rem;
-  font-size: 0.88rem;
-  color: var(--accent);
-  text-decoration: none;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.18s ease;
-}
-.readmore:hover,
-.readmore:focus-visible { border-color: var(--accent); outline: none; }
-
 /* expand affordance */
 .chev {
   float: right;
-  margin-top: 0.5rem;
+  margin-top: 0.6rem;
   width: 0.5rem; height: 0.5rem;
   border-right: 1.5px solid var(--ink-faint);
   border-bottom: 1.5px solid var(--ink-faint);
@@ -209,18 +195,56 @@ header.nav {
 @keyframes fade { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
 
 /* ---- photography ---- */
-#photography { margin-top: 6rem; }
-.beyond-intro { max-width: var(--measure); color: var(--ink-soft); margin: 0 0 2rem; }
-.gallery { columns: 2; column-gap: 1.4rem; }
-.gallery img {
+#photography { margin-top: 5rem; }
+.cat-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  margin: 0 0 1.6rem;
+}
+.gallery { columns: 2; column-gap: 1rem; }
+.gallery .shot {
+  display: block;
+  margin: 0 0 1rem;
+  break-inside: avoid;
+  cursor: zoom-in;
+  outline: none;
+}
+.gallery .shot img {
   width: 100%;
   height: auto;
   display: block;
-  margin: 0 0 1.4rem;
-  border-radius: 2px;
-  break-inside: avoid;
+  border-radius: 3px;
+  border: 1px solid var(--line);
+  transition: filter 0.2s ease, border-color 0.2s ease;
+}
+.gallery .shot:focus-visible img { border-color: var(--accent); }
+@media (hover: hover) {
+  .gallery .shot:hover img { filter: brightness(1.08); }
 }
 @media (max-width: 640px) { .gallery { columns: 1; } }
+
+/* ---- lightbox ---- */
+.lightbox {
+  border: none;
+  padding: 0;
+  background: transparent;
+  max-width: min(94vw, 1400px);
+  max-height: 92vh;
+  overflow: visible;
+}
+.lightbox::backdrop { background: rgba(16, 15, 15, 0.88); }
+.lightbox img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 92vh;
+  object-fit: contain;
+  border-radius: 3px;
+  cursor: zoom-out;
+}
 
 /* ---- footer ---- */
 footer {
@@ -236,6 +260,22 @@ footer {
 }
 footer a { color: var(--ink-soft); text-decoration: none; border-bottom: 1px solid transparent; }
 footer a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* ---- mobile ---- */
+@media (max-width: 480px) {
+  .wrap { padding: 0 1.1rem; }
+  header.nav { padding: 1.6rem 0; }
+  .navlinks { gap: 1.15rem; }
+  .navlinks a { padding-top: 0.6rem; padding-bottom: 0.6rem; }
+  .hero { padding: 2.5rem 0 3rem; }
+  .hero p { font-size: 1rem; }
+  .section-head { padding-top: 2.4rem; }
+  .worklist { padding-left: 1.4rem; }
+  .node { left: -1.4rem; }
+  .entry { padding: 2.1rem 0; }
+  .etitle { font-size: 1.22rem; }
+  #photography { margin-top: 3.5rem; }
+}
 
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
