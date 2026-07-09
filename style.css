@@ -15,8 +15,8 @@
   --sans: "Public Sans", ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
 
-  --measure: 38rem;
-  --container: 60rem;
+  --measure: 46rem;
+  --container: 46rem;
 }
 
 * { box-sizing: border-box; }
@@ -77,12 +77,12 @@ header.nav {
 .hero h1 {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(2rem, 5vw, 3.1rem);
+  font-size: clamp(2rem, 5vw, 2.8rem);
   line-height: 1.08;
   letter-spacing: -0.01em;
   text-wrap: balance;
   margin: 0 0 1.6rem;
-  max-width: 32ch;
+  max-width: none;
 }
 .hero p {
   max-width: var(--measure);
