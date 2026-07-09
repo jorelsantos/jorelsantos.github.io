@@ -10,3 +10,4 @@ assets/demos/*/raw/*
 !assets/demos/*/raw/.gitkeep
 
 .DS_Store
+.gstack/
