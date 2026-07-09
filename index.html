@@ -54,6 +54,20 @@
             <p><span class="lead">Context</span>Finding datasets across ICPSR, OpenAlex, and DataCite is hard: there's no shared discovery layer, and keyword search won't tell you how a dataset has been used. Built at the Institute for Social Research under Prof. Libby Hemphill.</p>
             <p><span class="lead">What I did</span>Sole builder. I engineered the full stack: a Neo4j knowledge graph (349K nodes, 2M+ relationships) linking datasets to the papers that cite them, semantic search, a graph API, and a Next.js app on Vercel. Mid-build, user testing showed the "evidence-seeker" audience was too broad, so I drove a pivot to a focused instructor segment and rewrote the product brief and 15-week roadmap around it.</p>
             <p><span class="lead">Results</span>A deployed tool that ranks datasets by citation evidence and shows the citing papers as proof. The pivot narrowed the roadmap to a user we could serve well, after testing exposed where the team's assumptions outran the data.</p>
+            <!-- DEMO MEDIA — add files to assets/demos/sosbio/web/, then uncomment & fill alt + caption. Delete unused lines. See assets/demos/README.md. -->
+            <!--
+            <figure class="demo demo--shot">
+              <img src="assets/demos/sosbio/web/01-hero.webp" width="1600" height="1000" loading="lazy" alt="TODO describe the screenshot" />
+              <figcaption>TODO one-line caption</figcaption>
+            </figure>
+            <figure class="demo demo--video">
+              <video muted loop playsinline autoplay preload="none" poster="assets/demos/sosbio/web/demo-poster.webp">
+                <source src="assets/demos/sosbio/web/demo.webm" type="video/webm" />
+                <source src="assets/demos/sosbio/web/demo.mp4" type="video/mp4" />
+              </video>
+              <figcaption>TODO 15–20s walkthrough caption</figcaption>
+            </figure>
+            -->
           </div>
         </details>
 
@@ -70,6 +84,20 @@
             <p><span class="lead">Context</span>Every fitness tool picks a side: Hevy for lifting, Strava for running. A hybrid athlete training for a half marathon without losing strength has no single view. I wanted one, built around how I log: messy notes, not rigid forms.</p>
             <p><span class="lead">What I did</span>Sole builder. I built a self-hosted app that parses my Obsidian workout logs into SQLite and serves progression, volume, frequency, and completeness analytics on a FastAPI and pandas backend. An LLM reads a typed or dictated workout, pulls out sets, reps, RPE, and notes (a tweaked shoulder), and writes it back to my notes, which stay the source of truth. Apple Health feeds the running and conditioning side.</p>
             <p><span class="lead">Results</span>One screen for the whole training picture, lifts and runs together, that no off-the-shelf app offers, self-hosted at near-zero cost. Lifting analytics and natural-language logging work today; running and dual-progression views land next.</p>
+            <!-- DEMO MEDIA — add files to assets/demos/vinland/web/, then uncomment & fill alt + caption. Delete unused lines. See assets/demos/README.md. -->
+            <!--
+            <figure class="demo demo--shot">
+              <img src="assets/demos/vinland/web/01-hero.webp" width="1600" height="1000" loading="lazy" alt="TODO describe the screenshot" />
+              <figcaption>TODO one-line caption</figcaption>
+            </figure>
+            <figure class="demo demo--video">
+              <video muted loop playsinline autoplay preload="none" poster="assets/demos/vinland/web/demo-poster.webp">
+                <source src="assets/demos/vinland/web/demo.webm" type="video/webm" />
+                <source src="assets/demos/vinland/web/demo.mp4" type="video/mp4" />
+              </video>
+              <figcaption>TODO 15–20s walkthrough caption</figcaption>
+            </figure>
+            -->
           </div>
         </details>
 
@@ -86,6 +114,20 @@
             <p><span class="lead">Context</span>Streaming platforms recommend by genre and popularity, not by how artists connect through collaborations. I wanted to trace the path between any two musicians, who features on whose tracks, and turn it into a way to discover music.</p>
             <p><span class="lead">What I did</span>Solo builder. I engineered a 119,729-artist collaboration graph from a 30GB archive to replace the rate-limited Spotify API. Before scaling, I ran feasibility spikes: a 67-song preview test that auto-resolved 79% and played back 100%. I gated an 8x graph expansion (14,881 to 119,729 artists) on accuracy and size guardrails before promoting to production.</p>
             <p><span class="lead">Results</span>A working shortest-path discovery prototype over 119K artists, on architecture I validated before committing to it, not after.</p>
+            <!-- DEMO MEDIA — add files to assets/demos/rabbit-hole/web/, then uncomment & fill alt + caption. Delete unused lines. See assets/demos/README.md. -->
+            <!--
+            <figure class="demo demo--shot">
+              <img src="assets/demos/rabbit-hole/web/01-hero.webp" width="1600" height="1000" loading="lazy" alt="TODO describe the screenshot" />
+              <figcaption>TODO one-line caption</figcaption>
+            </figure>
+            <figure class="demo demo--video">
+              <video muted loop playsinline autoplay preload="none" poster="assets/demos/rabbit-hole/web/demo-poster.webp">
+                <source src="assets/demos/rabbit-hole/web/demo.webm" type="video/webm" />
+                <source src="assets/demos/rabbit-hole/web/demo.mp4" type="video/mp4" />
+              </video>
+              <figcaption>TODO 15–20s walkthrough caption</figcaption>
+            </figure>
+            -->
           </div>
         </details>
 
@@ -102,6 +144,20 @@
             <p><span class="lead">Context</span>When the vendor platform Cuneiform sunset, the Center for Academic Innovation lost the ability to audit how its Salesforce instance was used, right as it weighed a Snowflake migration. Revenue data was also scattered across Coursera, edX, and Salesforce with no shared view.</p>
             <p><span class="lead">What I did</span>I built a self-service tool that lets any non-technical CAI team audit Salesforce utilization across 350+ objects, turning a lost capability into a repeatable input for the migration decision. Then I unified the scattered revenue data into one standardized model.</p>
             <p><span class="lead">Results</span>Finance and leadership got a course-level view of profitability across Michigan Online's 280+ courses and 12M+ learners, and the team could weigh the Snowflake migration on real utilization data, not guesswork.</p>
+            <!-- DEMO MEDIA — add files to assets/demos/cai/web/, then uncomment & fill alt + caption. Delete unused lines. See assets/demos/README.md. -->
+            <!--
+            <figure class="demo demo--shot">
+              <img src="assets/demos/cai/web/01-hero.webp" width="1600" height="1000" loading="lazy" alt="TODO describe the screenshot" />
+              <figcaption>TODO one-line caption</figcaption>
+            </figure>
+            <figure class="demo demo--video">
+              <video muted loop playsinline autoplay preload="none" poster="assets/demos/cai/web/demo-poster.webp">
+                <source src="assets/demos/cai/web/demo.webm" type="video/webm" />
+                <source src="assets/demos/cai/web/demo.mp4" type="video/mp4" />
+              </video>
+              <figcaption>TODO 15–20s walkthrough caption</figcaption>
+            </figure>
+            -->
           </div>
         </details>
 
@@ -156,6 +212,16 @@
     if (e.target === lb || e.target === lbImg) lb.close(); // backdrop or image click closes
   });
   lb.addEventListener('close', function () { lbImg.removeAttribute('src'); });
+})();
+
+(function () {
+  // Respect prefers-reduced-motion: stop demo clips from autoplaying so the
+  // poster frame shows instead. Inert until a DEMO MEDIA block is uncommented.
+  if (!window.matchMedia || !window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('.demo--video video[autoplay]').forEach(function (v) {
+    v.removeAttribute('autoplay');
+    v.pause();
+  });
 })();
 </script>
 
