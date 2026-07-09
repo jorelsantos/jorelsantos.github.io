@@ -4,4 +4,9 @@ assets/photos/*.jpg
 assets/photos/*.jpeg
 assets/photos/*.png
 
+# Demo assets — keep raw source recordings/screens local; commit only optimized web/ copies.
+# Ignore raw/ contents but keep the .gitkeep so the folder structure ships.
+assets/demos/*/raw/*
+!assets/demos/*/raw/.gitkeep
+
 .DS_Store
