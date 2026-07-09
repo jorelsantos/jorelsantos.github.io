@@ -202,6 +202,31 @@ header.nav {
 .detail em { font-style: italic; }
 @keyframes fade { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
 
+/* detail media — screenshots + short demo clips inside an expanded entry.
+   aspect-ratio reserves space so expanding a project never jumps the page.
+   Reduced-motion handling for autoplay clips lives in the JS guard in index.html
+   (a paused <video> shows its poster; CSS alone can't cancel autoplay). */
+.detail .demo { margin: 1.6rem 0 0; }
+.detail .demo img,
+.detail .demo video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+.detail .demo--shot img { aspect-ratio: 16 / 10; object-fit: cover; }
+.detail .demo--video video { aspect-ratio: 16 / 9; object-fit: cover; }
+.detail .demo figcaption {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0.5rem 0 0;
+}
+
 /* ---- photography ---- */
 #photography { margin-top: 5rem; }
 .cat-label {
