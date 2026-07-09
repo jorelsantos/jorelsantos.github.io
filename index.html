@@ -84,19 +84,37 @@
             <p><span class="lead">Context</span>Every fitness tool picks a side: Hevy for lifting, Strava for running. A hybrid athlete training for a half marathon without losing strength has no single view. I wanted one, built around how I log: messy notes, not rigid forms.</p>
             <p><span class="lead">What I did</span>Sole builder. I built a self-hosted app that parses my Obsidian workout logs into SQLite and serves progression, volume, frequency, and completeness analytics on a FastAPI and pandas backend. An LLM reads a typed or dictated workout, pulls out sets, reps, RPE, and notes (a tweaked shoulder), and writes it back to my notes, which stay the source of truth. Apple Health feeds the running and conditioning side.</p>
             <p><span class="lead">Results</span>One screen for the whole training picture, lifts and runs together, that no off-the-shelf app offers, self-hosted at near-zero cost. Lifting analytics and natural-language logging work today; running and dual-progression views land next.</p>
-            <div class="demo-stack">
-              <figure class="demo demo--shot">
-                <img src="assets/demos/vinland/web/01-home-hybrid.webp" width="1170" height="2532" loading="lazy" alt="Vinland phone Home: Up Next pull day, At a Glance with 3 lifts and 2 runs for 6.0 run miles this week" />
-                <figcaption>One glance for the hybrid week — lifts and runs together</figcaption>
-              </figure>
-              <figure class="demo demo--shot">
-                <img src="assets/demos/vinland/web/02-strength-progression.webp" width="1170" height="2532" loading="lazy" alt="Vinland phone Strength: Deadlift top-set progression chart climbing over months plus weekly hard-set volume" />
-                <figcaption>Progression you can trust — Deadlift top sets over time</figcaption>
-              </figure>
-              <figure class="demo demo--shot">
-                <img src="assets/demos/vinland/web/03-run-truth.webp" width="1170" height="2532" loading="lazy" alt="Vinland phone Run: recent outdoor runs with distance, pace, and heart rate" />
-                <figcaption>Running truth beside the barbell — recent efforts and pace</figcaption>
-              </figure>
+            <div class="demo-strip" role="region" aria-roledescription="carousel" aria-label="Vinland product screenshots">
+              <div class="demo-stack">
+                <figure class="demo demo--shot">
+                  <button type="button" class="demo-zoom" aria-label="Enlarge Home screenshot">
+                    <img src="assets/demos/vinland/web/01-home-hybrid.webp" width="1170" height="2532" loading="lazy" alt="Vinland phone Home: Up Next pull day, At a Glance with 3 lifts and 2 runs for 6.0 run miles this week" />
+                  </button>
+                  <figcaption>One glance for the hybrid week — lifts and runs together</figcaption>
+                </figure>
+                <figure class="demo demo--shot">
+                  <button type="button" class="demo-zoom" aria-label="Enlarge Strength screenshot">
+                    <img src="assets/demos/vinland/web/02-strength-progression.webp" width="1170" height="2532" loading="lazy" alt="Vinland phone Strength: Deadlift top-set progression chart climbing over months plus weekly hard-set volume" />
+                  </button>
+                  <figcaption>Progression you can trust — Deadlift top sets over time</figcaption>
+                </figure>
+                <figure class="demo demo--shot">
+                  <button type="button" class="demo-zoom" aria-label="Enlarge Run screenshot">
+                    <img src="assets/demos/vinland/web/03-run-truth.webp" width="1170" height="2532" loading="lazy" alt="Vinland phone Run: recent outdoor runs with distance, pace, and heart rate" />
+                  </button>
+                  <figcaption>Running truth beside the barbell — recent efforts and pace</figcaption>
+                </figure>
+              </div>
+              <div class="demo-strip-controls">
+                <button type="button" class="demo-strip-btn" data-demo-dir="-1" aria-label="Previous screenshot">‹</button>
+                <div class="demo-strip-dots" role="tablist" aria-label="Screenshot position">
+                  <button type="button" class="demo-strip-dot is-active" role="tab" aria-selected="true" aria-label="Home" data-demo-i="0"></button>
+                  <button type="button" class="demo-strip-dot" role="tab" aria-selected="false" aria-label="Strength" data-demo-i="1"></button>
+                  <button type="button" class="demo-strip-dot" role="tab" aria-selected="false" aria-label="Run" data-demo-i="2"></button>
+                </div>
+                <button type="button" class="demo-strip-btn" data-demo-dir="1" aria-label="Next screenshot">›</button>
+              </div>
+              <p class="demo-strip-hint">Swipe or use arrows · Home · Strength · Run</p>
             </div>
           </div>
         </details>
@@ -221,6 +239,87 @@
   document.querySelectorAll('.demo--video video[autoplay]').forEach(function (v) {
     v.removeAttribute('autoplay');
     v.pause();
+  });
+})();
+
+(function () {
+  // Demo strip: mobile snap carousel (arrows + dots). Desktop is a static 3-up row.
+  // Click/tap a phone to open the shared lightbox for a larger view.
+  var strips = document.querySelectorAll('.demo-strip');
+  if (!strips.length) return;
+
+  var lb = document.querySelector('.lightbox');
+  var lbImg = lb && lb.querySelector('img');
+  var canLb = lb && typeof lb.showModal === 'function';
+
+  strips.forEach(function (strip) {
+    var track = strip.querySelector('.demo-stack');
+    var slides = track ? track.querySelectorAll('.demo') : [];
+    var dots = strip.querySelectorAll('.demo-strip-dot');
+    var btns = strip.querySelectorAll('.demo-strip-btn');
+    if (!track || !slides.length) return;
+
+    function indexFromScroll() {
+      var mid = track.scrollLeft + track.clientWidth / 2;
+      var best = 0;
+      var bestDist = Infinity;
+      for (var i = 0; i < slides.length; i++) {
+        var el = slides[i];
+        var c = el.offsetLeft + el.offsetWidth / 2;
+        var d = Math.abs(c - mid);
+        if (d < bestDist) { bestDist = d; best = i; }
+      }
+      return best;
+    }
+
+    function setActive(i) {
+      dots.forEach(function (dot, j) {
+        var on = j === i;
+        dot.classList.toggle('is-active', on);
+        dot.setAttribute('aria-selected', on ? 'true' : 'false');
+      });
+    }
+
+    function goTo(i) {
+      i = Math.max(0, Math.min(slides.length - 1, i));
+      var el = slides[i];
+      var left = el.offsetLeft - (track.clientWidth - el.offsetWidth) / 2;
+      track.scrollTo({ left: left, behavior: 'smooth' });
+      setActive(i);
+    }
+
+    var scrollTick = null;
+    track.addEventListener('scroll', function () {
+      if (scrollTick) return;
+      scrollTick = requestAnimationFrame(function () {
+        scrollTick = null;
+        setActive(indexFromScroll());
+      });
+    }, { passive: true });
+
+    btns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var dir = parseInt(btn.getAttribute('data-demo-dir'), 10) || 0;
+        goTo(indexFromScroll() + dir);
+      });
+    });
+
+    dots.forEach(function (dot) {
+      dot.addEventListener('click', function () {
+        goTo(parseInt(dot.getAttribute('data-demo-i'), 10) || 0);
+      });
+    });
+
+    // Enlarge: reuse photo lightbox
+    strip.querySelectorAll('.demo-zoom').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var img = btn.querySelector('img');
+        if (!img || !canLb) return;
+        lbImg.src = img.currentSrc || img.src;
+        lbImg.alt = img.alt || '';
+        lb.showModal();
+      });
+    });
   });
 })();
 </script>

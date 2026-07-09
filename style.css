@@ -202,22 +202,39 @@ header.nav {
 .detail em { font-style: italic; }
 @keyframes fade { from { opacity: 0; transform: translateY(3px); } to { opacity: 1; transform: none; } }
 
-/* detail media — screenshots + short demo clips inside an expanded entry.
-   Phone product stills are portrait (≈9:16); landscape 16:10 is for future
-   wide desktop crops / video only. Reduced-motion autoplay guard is in index.html. */
-.detail .demo-stack {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.35rem;
+/* detail media — phone product stills as a confined strip.
+   Desktop: 3-up row. Mobile: horizontal snap carousel + dots/arrows.
+   Reduced-motion autoplay guard for video lives in index.html. */
+.detail .demo-strip {
   margin: 1.75rem 0 0;
+}
+.detail .demo-stack {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  align-items: start;
 }
 .detail .demo-stack .demo {
   margin: 0;
   width: 100%;
-  max-width: 17.5rem; /* ~phone width — keeps UI large and sharp */
+  min-width: 0;
 }
 .detail .demo { margin: 1.6rem 0 0; }
+.detail .demo-zoom {
+  display: block;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: zoom-in;
+  border-radius: 12px;
+  text-align: left;
+}
+.detail .demo-zoom:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
 .detail .demo img,
 .detail .demo video {
   display: block;
@@ -228,7 +245,6 @@ header.nav {
   background: var(--ground);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.03) inset, 0 14px 36px rgba(0, 0, 0, 0.32);
 }
-/* Portrait phone stills: natural aspect, no landscape crop */
 .detail .demo--shot img {
   aspect-ratio: auto;
   object-fit: contain;
@@ -237,13 +253,106 @@ header.nav {
 .detail .demo--video video { aspect-ratio: 16 / 9; object-fit: cover; }
 .detail .demo figcaption {
   font-family: var(--mono);
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
+  font-size: 0.62rem;
+  letter-spacing: 0.07em;
   text-transform: uppercase;
   color: var(--ink-faint);
-  margin: 0.55rem 0 0;
-  line-height: 1.45;
+  margin: 0.5rem 0 0;
+  line-height: 1.4;
   text-align: center;
+}
+/* Desktop: all three visible — hide carousel chrome */
+.detail .demo-strip-controls,
+.detail .demo-strip-hint {
+  display: none;
+}
+
+/* Mobile / narrow: one phone at a time, swipe + arrows + dots */
+@media (max-width: 640px) {
+  .detail .demo-stack {
+    display: flex;
+    flex-direction: row;
+    gap: 0.85rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    padding: 0.15rem calc((100% - min(72vw, 16.5rem)) / 2) 0.35rem;
+    margin: 0 -0.15rem;
+    scrollbar-width: none;
+  }
+  .detail .demo-stack::-webkit-scrollbar { display: none; }
+  .detail .demo-stack .demo {
+    flex: 0 0 min(72vw, 16.5rem);
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+  }
+  .detail .demo figcaption {
+    font-size: 0.6rem;
+    max-width: min(72vw, 16.5rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .detail .demo-strip-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.85rem;
+    margin-top: 0.85rem;
+  }
+  .detail .demo-strip-btn {
+    font-family: var(--mono);
+    font-size: 1.15rem;
+    line-height: 1;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 999px;
+    border: 1px solid var(--line);
+    background: var(--panel);
+    color: var(--ink-soft);
+    cursor: pointer;
+    padding: 0;
+  }
+  .detail .demo-strip-btn:hover,
+  .detail .demo-strip-btn:focus-visible {
+    border-color: var(--accent);
+    color: var(--accent);
+    outline: none;
+  }
+  .detail .demo-strip-dots {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+  }
+  .detail .demo-strip-dot {
+    width: 0.4rem;
+    height: 0.4rem;
+    padding: 0;
+    border: none;
+    border-radius: 999px;
+    background: var(--line);
+    cursor: pointer;
+  }
+  .detail .demo-strip-dot.is-active {
+    background: var(--accent);
+    transform: scale(1.15);
+  }
+  .detail .demo-strip-hint {
+    display: block;
+    text-align: center;
+    font-family: var(--mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin: 0.55rem 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .detail .demo-stack { scroll-behavior: auto; }
 }
 
 /* ---- photography ---- */
