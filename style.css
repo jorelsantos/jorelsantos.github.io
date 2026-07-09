@@ -4,9 +4,9 @@
   /* Flexoki Dark (stephango.com/flexoki) */
   --ground: #100F0F;     /* black */
   --panel: #1C1B1A;      /* base-950 */
-  --ink: #CECDC3;        /* base-200 */
-  --ink-soft: #878580;   /* base-500 */
-  --ink-faint: #6F6E69;  /* base-600 */
+  --ink: #E6E4D9;        /* base-100 */
+  --ink-soft: #B7B5AC;   /* base-300 */
+  --ink-faint: #878580;  /* base-500 */
   --line: #282726;       /* base-900 */
   --line-soft: #343331;  /* base-850 */
   --accent: #3AA99F;     /* cyan-400 */
@@ -15,8 +15,8 @@
   --sans: "Public Sans", ui-sans-serif, -apple-system, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, "SF Mono", "Cascadia Code", Menlo, Consolas, monospace;
 
-  --measure: 34rem;
-  --container: 53rem;
+  --measure: 38rem;
+  --container: 60rem;
 }
 
 * { box-sizing: border-box; }
@@ -77,12 +77,12 @@ header.nav {
 .hero h1 {
   font-family: var(--serif);
   font-weight: 500;
-  font-size: clamp(2.3rem, 6vw, 4rem);
-  line-height: 1.05;
+  font-size: clamp(2rem, 5vw, 3.1rem);
+  line-height: 1.08;
   letter-spacing: -0.01em;
   text-wrap: balance;
   margin: 0 0 1.6rem;
-  max-width: 24ch;
+  max-width: 32ch;
 }
 .hero p {
   max-width: var(--measure);

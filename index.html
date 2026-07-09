@@ -46,14 +46,14 @@
             <span class="chev"></span>
             <p class="year">2026–Present</p>
             <h3 class="etitle">Research Discovery Knowledge Graph</h3>
-            <p class="teaser">An AI-grounded search tool that helps social-science instructors find datasets by how they've actually been used.</p>
+            <p class="teaser">An AI-grounded search tool that helps social-science instructors find datasets by how researchers have used them.</p>
             <p class="tags">Python · Neo4j · semantic search · Next.js · LLM grounding</p>
           </summary>
           <span class="node" aria-hidden="true"></span>
           <div class="detail">
-            <p><span class="lead">Context</span>Instructors and researchers can't easily find datasets across ICPSR, OpenAlex, and DataCite — there's no shared discovery layer, and keyword search can't show how a dataset has actually been used. Built at the Institute for Social Research under Prof. Libby Hemphill.</p>
-            <p><span class="lead">What I did</span>Sole builder. I built a Neo4j knowledge graph — 349K nodes, 2M+ relationships — linking datasets to the publications that cite them, added semantic search and a graph API, and shipped a Next.js app on Vercel. Midway, user testing showed our audience was too broad, so I drove a pivot to a focused instructor segment and rewrote the product brief and 15-week roadmap around it.</p>
-            <p><span class="lead">Results</span>A deployed tool that ranks datasets by citation evidence and shows the citing papers as proof. The pivot refocused the roadmap on a user we could actually serve, once testing exposed the gap between team assumptions and what the data could support.</p>
+            <p><span class="lead">Context</span>Finding datasets across ICPSR, OpenAlex, and DataCite is hard: there's no shared discovery layer, and keyword search won't tell you how a dataset has been used. Built at the Institute for Social Research under Prof. Libby Hemphill.</p>
+            <p><span class="lead">What I did</span>Sole builder. I engineered the full stack: a Neo4j knowledge graph (349K nodes, 2M+ relationships) linking datasets to the papers that cite them, semantic search, a graph API, and a Next.js app on Vercel. Mid-build, user testing showed the "evidence-seeker" audience was too broad, so I drove a pivot to a focused instructor segment and rewrote the product brief and 15-week roadmap around it.</p>
+            <p><span class="lead">Results</span>A deployed tool that ranks datasets by citation evidence and shows the citing papers as proof. The pivot narrowed the roadmap to a user we could serve well, after testing exposed where the team's assumptions outran the data.</p>
           </div>
         </details>
 
@@ -62,14 +62,14 @@
             <span class="chev"></span>
             <p class="year">2026–Present</p>
             <h3 class="etitle">Vinland</h3>
-            <p class="teaser">A hybrid-athlete dashboard that unifies lifting and running in one place — logging by plain language, not forms.</p>
+            <p class="teaser">A hybrid-athlete dashboard that unifies lifting and running in one place, logged in plain language instead of forms.</p>
             <p class="tags">Python · FastAPI · SQLite · pandas · LLM parsing · PWA</p>
           </summary>
           <span class="node" aria-hidden="true"></span>
           <div class="detail">
-            <p><span class="lead">Context</span>Every fitness tool serves one side of the athlete — Hevy for lifting, Strava for running — so a hybrid athlete training for a half marathon without losing strength has no single view. I wanted one, built around how I actually log: messy notes, not rigid forms.</p>
-            <p><span class="lead">What I did</span>Sole builder. I built a self-hosted app that parses my Obsidian workout logs into SQLite and serves progression, volume, frequency, and completeness analytics through a FastAPI and pandas backend. An LLM reads a typed or dictated workout — pulling out sets, reps, RPE, and notes like a tweaked shoulder — and writes it back to my notes, which stay the single source of truth. Apple Health feeds the running and conditioning side.</p>
-            <p><span class="lead">Results</span>One screen for the whole training picture — lifts and runs together — that no off-the-shelf app offers, self-hosted at near-zero cost. The lifting analytics and natural-language logging work today; the running and dual-progression views are landing next.</p>
+            <p><span class="lead">Context</span>Every fitness tool picks a side: Hevy for lifting, Strava for running. A hybrid athlete training for a half marathon without losing strength has no single view. I wanted one, built around how I log: messy notes, not rigid forms.</p>
+            <p><span class="lead">What I did</span>Sole builder. I built a self-hosted app that parses my Obsidian workout logs into SQLite and serves progression, volume, frequency, and completeness analytics on a FastAPI and pandas backend. An LLM reads a typed or dictated workout, pulls out sets, reps, RPE, and notes (a tweaked shoulder), and writes it back to my notes, which stay the source of truth. Apple Health feeds the running and conditioning side.</p>
+            <p><span class="lead">Results</span>One screen for the whole training picture, lifts and runs together, that no off-the-shelf app offers, self-hosted at near-zero cost. Lifting analytics and natural-language logging work today; running and dual-progression views land next.</p>
           </div>
         </details>
 
@@ -78,14 +78,14 @@
             <span class="chev"></span>
             <p class="year">2025–Present</p>
             <h3 class="etitle">Rabbit Hole</h3>
-            <p class="teaser">Find the shortest collaboration path between any two artists — the discovery feature streaming platforms don't have.</p>
+            <p class="teaser">Find the shortest collaboration path between any two artists, a discovery feature streaming platforms don't have.</p>
             <p class="tags">Python · Neo4j · graph algorithms · Spotify data</p>
           </summary>
           <span class="node" aria-hidden="true"></span>
           <div class="detail">
-            <p><span class="lead">Context</span>Streaming platforms recommend by genre and popularity, not by how artists connect through collaborations. I wanted to trace the path between any two musicians — who features on whose tracks — and turn it into a way to discover music.</p>
-            <p><span class="lead">What I did</span>Solo builder. I engineered a 119,729-artist collaboration graph from a 30GB archive to replace the rate-limited Spotify API. Before scaling, I ran feasibility spikes — a 67-song preview test that auto-resolved 79% and played back 100% — and gated an 8x graph expansion on accuracy and size guardrails before promoting to production.</p>
-            <p><span class="lead">Results</span>A working shortest-path discovery prototype over 119K artists, on architecture I validated before committing to it instead of after.</p>
+            <p><span class="lead">Context</span>Streaming platforms recommend by genre and popularity, not by how artists connect through collaborations. I wanted to trace the path between any two musicians, who features on whose tracks, and turn it into a way to discover music.</p>
+            <p><span class="lead">What I did</span>Solo builder. I engineered a 119,729-artist collaboration graph from a 30GB archive to replace the rate-limited Spotify API. Before scaling, I ran feasibility spikes: a 67-song preview test that auto-resolved 79% and played back 100%. I gated an 8x graph expansion (14,881 to 119,729 artists) on accuracy and size guardrails before promoting to production.</p>
+            <p><span class="lead">Results</span>A working shortest-path discovery prototype over 119K artists, on architecture I validated before committing to it, not after.</p>
           </div>
         </details>
 
@@ -94,14 +94,14 @@
             <span class="chev"></span>
             <p class="year">Jan–Apr 2026</p>
             <h3 class="etitle">Center for Academic Innovation — Michigan Online</h3>
-            <p class="teaser">Rebuilt a capability the team lost when its vendor tool sunset — self-service Salesforce auditing across 350+ objects.</p>
+            <p class="teaser">Rebuilt a capability the team lost when its vendor tool sunset: self-service Salesforce auditing across 350+ objects.</p>
             <p class="tags">Salesforce (API/SOQL) · SQL · Python · Snowflake</p>
           </summary>
           <span class="node" aria-hidden="true"></span>
           <div class="detail">
-            <p><span class="lead">Context</span>When the vendor platform Cuneiform sunset, the Center for Academic Innovation lost the ability to audit how its Salesforce instance was used — just as it was weighing a Snowflake migration. Revenue data was also scattered across Coursera, edX, and Salesforce with no shared view.</p>
-            <p><span class="lead">What I did</span>I built a self-service tool that lets any non-technical CAI team audit Salesforce utilization across 350+ objects, turning a lost capability into a repeatable input for the migration decision. Then I unified the fragmented revenue data into one standardized model.</p>
-            <p><span class="lead">Results</span>Finance and leadership got a course-level view of profitability across Michigan Online's 280+ courses and 12M+ learners, and the team could weigh the Snowflake migration on real utilization data instead of guesswork.</p>
+            <p><span class="lead">Context</span>When the vendor platform Cuneiform sunset, the Center for Academic Innovation lost the ability to audit how its Salesforce instance was used, right as it weighed a Snowflake migration. Revenue data was also scattered across Coursera, edX, and Salesforce with no shared view.</p>
+            <p><span class="lead">What I did</span>I built a self-service tool that lets any non-technical CAI team audit Salesforce utilization across 350+ objects, turning a lost capability into a repeatable input for the migration decision. Then I unified the scattered revenue data into one standardized model.</p>
+            <p><span class="lead">Results</span>Finance and leadership got a course-level view of profitability across Michigan Online's 280+ courses and 12M+ learners, and the team could weigh the Snowflake migration on real utilization data, not guesswork.</p>
           </div>
         </details>
 
