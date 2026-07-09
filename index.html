@@ -27,7 +27,7 @@
   <main>
 
     <section class="hero">
-      <h1>Building fun &amp; useful stuff in Research, Ed-Tech, and Health.</h1>
+      <h1>Building fun &amp; useful tools in Research, Ed-Tech, and Health.</h1>
       <p>Hi! I'm a Master's student at the UM School of Information, working in research, ed-tech, and health, with a BBA from UM Ross. I'm currently recruiting for intern roles (Fall 2026, Winter &amp; Spring 2027) and full-time roles for Summer 2027. I'm always looking to chat and connect! Email me at <a href="mailto:jorsanto@umich.edu">jorsanto@umich.edu</a> or send a message on LinkedIn. Cheers!</p>
       <div class="links">
         <a href="https://github.com/jorelsantos" target="_blank" rel="noopener">GitHub</a>
@@ -48,8 +48,8 @@
             <h3 class="etitle">Research Discovery Knowledge Graph</h3>
             <p class="teaser">An AI-grounded search tool that helps social-science instructors find datasets by how researchers have used them.</p>
             <p class="tags">Python · Neo4j · semantic search · Next.js · LLM grounding</p>
+            <span class="node" aria-hidden="true"></span>
           </summary>
-          <span class="node" aria-hidden="true"></span>
           <div class="detail">
             <p><span class="lead">Context</span>Finding datasets across ICPSR, OpenAlex, and DataCite is hard: there's no shared discovery layer, and keyword search won't tell you how a dataset has been used. Built at the Institute for Social Research under Prof. Libby Hemphill.</p>
             <p><span class="lead">What I did</span>Sole builder. I engineered the full stack: a Neo4j knowledge graph (349K nodes, 2M+ relationships) linking datasets to the papers that cite them, semantic search, a graph API, and a Next.js app on Vercel. Mid-build, user testing showed the "evidence-seeker" audience was too broad, so I drove a pivot to a focused instructor segment and rewrote the product brief and 15-week roadmap around it.</p>
@@ -64,8 +64,8 @@
             <h3 class="etitle">Vinland</h3>
             <p class="teaser">A hybrid-athlete dashboard that unifies lifting and running in one place, logged in plain language instead of forms.</p>
             <p class="tags">Python · FastAPI · SQLite · pandas · LLM parsing · PWA</p>
+            <span class="node" aria-hidden="true"></span>
           </summary>
-          <span class="node" aria-hidden="true"></span>
           <div class="detail">
             <p><span class="lead">Context</span>Every fitness tool picks a side: Hevy for lifting, Strava for running. A hybrid athlete training for a half marathon without losing strength has no single view. I wanted one, built around how I log: messy notes, not rigid forms.</p>
             <p><span class="lead">What I did</span>Sole builder. I built a self-hosted app that parses my Obsidian workout logs into SQLite and serves progression, volume, frequency, and completeness analytics on a FastAPI and pandas backend. An LLM reads a typed or dictated workout, pulls out sets, reps, RPE, and notes (a tweaked shoulder), and writes it back to my notes, which stay the source of truth. Apple Health feeds the running and conditioning side.</p>
@@ -80,8 +80,8 @@
             <h3 class="etitle">Rabbit Hole</h3>
             <p class="teaser">Find the shortest collaboration path between any two artists, a discovery feature streaming platforms don't have.</p>
             <p class="tags">Python · Neo4j · graph algorithms · Spotify data</p>
+            <span class="node" aria-hidden="true"></span>
           </summary>
-          <span class="node" aria-hidden="true"></span>
           <div class="detail">
             <p><span class="lead">Context</span>Streaming platforms recommend by genre and popularity, not by how artists connect through collaborations. I wanted to trace the path between any two musicians, who features on whose tracks, and turn it into a way to discover music.</p>
             <p><span class="lead">What I did</span>Solo builder. I engineered a 119,729-artist collaboration graph from a 30GB archive to replace the rate-limited Spotify API. Before scaling, I ran feasibility spikes: a 67-song preview test that auto-resolved 79% and played back 100%. I gated an 8x graph expansion (14,881 to 119,729 artists) on accuracy and size guardrails before promoting to production.</p>
@@ -96,8 +96,8 @@
             <h3 class="etitle">Center for Academic Innovation — Michigan Online</h3>
             <p class="teaser">Rebuilt a capability the team lost when its vendor tool sunset: self-service Salesforce auditing across 350+ objects.</p>
             <p class="tags">Salesforce (API/SOQL) · SQL · Python · Snowflake</p>
+            <span class="node" aria-hidden="true"></span>
           </summary>
-          <span class="node" aria-hidden="true"></span>
           <div class="detail">
             <p><span class="lead">Context</span>When the vendor platform Cuneiform sunset, the Center for Academic Innovation lost the ability to audit how its Salesforce instance was used, right as it weighed a Snowflake migration. Revenue data was also scattered across Coursera, edX, and Salesforce with no shared view.</p>
             <p><span class="lead">What I did</span>I built a self-service tool that lets any non-technical CAI team audit Salesforce utilization across 350+ objects, turning a lost capability into a repeatable input for the migration decision. Then I unified the scattered revenue data into one standardized model.</p>

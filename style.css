@@ -86,7 +86,7 @@ header.nav {
 }
 .hero p {
   max-width: var(--measure);
-  font-size: 1.08rem;
+  font-size: 0.98rem;
   color: var(--ink-soft);
   margin: 0 0 2.2rem;
 }
@@ -142,17 +142,17 @@ header.nav {
   border-bottom: 1px solid var(--line);
 }
 .entry:last-child { border-bottom: none; }
-.entry > summary { list-style: none; cursor: pointer; display: block; outline: none; }
+.entry > summary { position: relative; list-style: none; cursor: pointer; display: block; outline: none; }
 .entry > summary::-webkit-details-marker { display: none; }
 
 .node {
   position: absolute;
-  left: -1.9rem;
-  top: 2.85rem;
-  width: 6px; height: 6px;
+  left: -2.05rem;
+  top: 2.125rem;
+  width: 11px; height: 11px;
   border-radius: 50%;
   background: var(--ground);
-  border: 1px solid var(--ink-faint);
+  border: 1.5px solid var(--ink-faint);
   transition: border-color 0.2s ease, background 0.2s ease;
 }
 .entry[open] .node,
