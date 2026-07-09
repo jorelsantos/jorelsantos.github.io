@@ -84,20 +84,20 @@
             <p><span class="lead">Context</span>Every fitness tool picks a side: Hevy for lifting, Strava for running. A hybrid athlete training for a half marathon without losing strength has no single view. I wanted one, built around how I log: messy notes, not rigid forms.</p>
             <p><span class="lead">What I did</span>Sole builder. I built a self-hosted app that parses my Obsidian workout logs into SQLite and serves progression, volume, frequency, and completeness analytics on a FastAPI and pandas backend. An LLM reads a typed or dictated workout, pulls out sets, reps, RPE, and notes (a tweaked shoulder), and writes it back to my notes, which stay the source of truth. Apple Health feeds the running and conditioning side.</p>
             <p><span class="lead">Results</span>One screen for the whole training picture, lifts and runs together, that no off-the-shelf app offers, self-hosted at near-zero cost. Lifting analytics and natural-language logging work today; running and dual-progression views land next.</p>
-            <!-- DEMO MEDIA — add files to assets/demos/vinland/web/, then uncomment & fill alt + caption. Delete unused lines. See assets/demos/README.md. -->
-            <!--
-            <figure class="demo demo--shot">
-              <img src="assets/demos/vinland/web/01-hero.webp" width="1600" height="1000" loading="lazy" alt="TODO describe the screenshot" />
-              <figcaption>TODO one-line caption</figcaption>
-            </figure>
-            <figure class="demo demo--video">
-              <video muted loop playsinline autoplay preload="none" poster="assets/demos/vinland/web/demo-poster.webp">
-                <source src="assets/demos/vinland/web/demo.webm" type="video/webm" />
-                <source src="assets/demos/vinland/web/demo.mp4" type="video/mp4" />
-              </video>
-              <figcaption>TODO 15–20s walkthrough caption</figcaption>
-            </figure>
-            -->
+            <div class="demo-stack">
+              <figure class="demo demo--shot">
+                <img src="assets/demos/vinland/web/01-home-hybrid.webp" width="1600" height="1000" loading="lazy" alt="Vinland Home: Up Next push session, At a Glance week stats, anchor lifts, weekly mileage and steps" />
+                <figcaption>One glance for the hybrid week — lifts, anchors, mileage, and steps together</figcaption>
+              </figure>
+              <figure class="demo demo--shot">
+                <img src="assets/demos/vinland/web/02-strength-progression.webp" width="1600" height="1000" loading="lazy" alt="Vinland Strength Progression: Deadlift top-set chart over six months and weekly hard-set volume by muscle" />
+                <figcaption>Progression you can trust — top-set Deadlift history with weekly hard-set volume</figcaption>
+              </figure>
+              <figure class="demo demo--shot">
+                <img src="assets/demos/vinland/web/03-run-truth.webp" width="1600" height="1000" loading="lazy" alt="Vinland Run: recent runs with distance and heart rate, weekly mileage chart, and fastest pace list" />
+                <figcaption>Running truth beside the barbell — recent efforts, mileage, and pace</figcaption>
+              </figure>
+            </div>
           </div>
         </details>
 

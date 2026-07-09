@@ -91,8 +91,17 @@ The markup is already wired and pointed at these paths for all four projects —
 so the live site never shows a broken image before an asset exists. Adding an asset is: drop the file,
 uncomment, push.
 
+## Status
+
+- **Vinland (2026-07-09):** three premium stills shipped in `vinland/web/`
+  (`01-home-hybrid`, `02-strength-progression`, `03-run-truth`). Letterboxed
+  phone captures on Flexoki matte. Video / HyperFrames teaser deferred.
+
 ## Future slot
 
 A narrated 30-second trailer hosted on YouTube/Vimeo is a possible later addition. It's not scaffolded
 here (the self-hosted muted-loop path is), but the `<figure class="demo demo--video">` block could be
 swapped for an embed if you decide a narrated trailer is worth it for a flagship project.
+
+**HyperFrames later:** free HTML→MP4 agent path for a muted 12–18s Vinland teaser;
+do not block stills on that work.
