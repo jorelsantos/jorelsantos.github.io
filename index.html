@@ -60,6 +60,22 @@
         <details class="entry">
           <summary>
             <span class="chev"></span>
+            <p class="year">2026–Present</p>
+            <h3 class="etitle">Vinland</h3>
+            <p class="teaser">A hybrid-athlete dashboard that unifies lifting and running in one place — logging by plain language, not forms.</p>
+            <p class="tags">Python · FastAPI · SQLite · pandas · LLM parsing · PWA</p>
+          </summary>
+          <span class="node" aria-hidden="true"></span>
+          <div class="detail">
+            <p><span class="lead">Context</span>Every fitness tool serves one side of the athlete — Hevy for lifting, Strava for running — so a hybrid athlete training for a half marathon without losing strength has no single view. I wanted one, built around how I actually log: messy notes, not rigid forms.</p>
+            <p><span class="lead">What I did</span>Sole builder. I built a self-hosted app that parses my Obsidian workout logs into SQLite and serves progression, volume, frequency, and completeness analytics through a FastAPI and pandas backend. An LLM reads a typed or dictated workout — pulling out sets, reps, RPE, and notes like a tweaked shoulder — and writes it back to my notes, which stay the single source of truth. Apple Health feeds the running and conditioning side.</p>
+            <p><span class="lead">Results</span>One screen for the whole training picture — lifts and runs together — that no off-the-shelf app offers, self-hosted at near-zero cost. The lifting analytics and natural-language logging work today; the running and dual-progression views are landing next.</p>
+          </div>
+        </details>
+
+        <details class="entry">
+          <summary>
+            <span class="chev"></span>
             <p class="year">2025–Present</p>
             <h3 class="etitle">Rabbit Hole</h3>
             <p class="teaser">Find the shortest collaboration path between any two artists — the discovery feature streaming platforms don't have.</p>
@@ -86,38 +102,6 @@
             <p><span class="lead">Context</span>When the vendor platform Cuneiform sunset, the Center for Academic Innovation lost the ability to audit how its Salesforce instance was used — just as it was weighing a Snowflake migration. Revenue data was also scattered across Coursera, edX, and Salesforce with no shared view.</p>
             <p><span class="lead">What I did</span>I built a self-service tool that lets any non-technical CAI team audit Salesforce utilization across 350+ objects, turning a lost capability into a repeatable input for the migration decision. Then I unified the fragmented revenue data into one standardized model.</p>
             <p><span class="lead">Results</span>Finance and leadership got a course-level view of profitability across Michigan Online's 280+ courses and 12M+ learners, and the team could weigh the Snowflake migration on real utilization data instead of guesswork.</p>
-          </div>
-        </details>
-
-        <details class="entry">
-          <summary>
-            <span class="chev"></span>
-            <p class="year">Apr 2026</p>
-            <h3 class="etitle">Where Do UMSI Students Land?</h3>
-            <p class="teaser">8 years of career placement data, mined for what actually gets students hired.</p>
-            <p class="tags">Python · pandas · hypothesis testing · clustering</p>
-          </summary>
-          <span class="node" aria-hidden="true"></span>
-          <div class="detail">
-            <p><span class="lead">Context</span>UMSI's Career Development Office had 8 years of placement survey data (2017–2024) in two messy, separate files. Nobody had unified it to ask what actually predicts a good outcome. Team project with Tyler Tran and Kenny Wang.</p>
-            <p><span class="lead">What I did</span>I merged and cleaned 1,374 placement records, standardized organization names, and engineered a search-strategy variable from free-text survey responses. Then ran chi-square tests, a regression on strategy over time, and k-means and agglomerative clustering.</p>
-            <p><span class="lead">Results</span>Networking drove 25.7% of placements — more than any other method, and the gap was significant (χ²(5) = 361.25, p &lt; 0.001). COVID accelerated the pattern rather than reversing it (χ²(5) = 29.80, p &lt; 0.001). A few organizations — Michigan, Google, and Amazon — took a disproportionate share of the pipeline.</p>
-          </div>
-        </details>
-
-        <details class="entry">
-          <summary>
-            <span class="chev"></span>
-            <p class="year">Dec 2025</p>
-            <h3 class="etitle">NBA Players Are Getting Leaner, Faster</h3>
-            <p class="teaser">A normalized SQL database of ~3,000 NBA players, built to test a hunch about how player builds are changing.</p>
-            <p class="tags">SQL · relational database design · DataGrip · ERD</p>
-          </summary>
-          <span class="node" aria-hidden="true"></span>
-          <div class="detail">
-            <p><span class="lead">Context</span>I started with a raw dataset of ~3,000 NBA players and wanted to design a proper relational database around it, not just query a flat file — then use it to test whether builds have shifted as the league got more athletic.</p>
-            <p><span class="lead">What I did</span>I designed an ERD and built five normalized tables — players, schools, teams, positions, and countries — choosing weight and years of experience as key fields and deliberately skipping lookup tables the data didn't justify.</p>
-            <p><span class="lead">Results</span>Players with fewer than 6 years of experience average 206 lbs, versus 217 lbs for players with 6+ years — incoming players trend leaner. Separately, 317 of the ~3,000 players traced back to Big Ten schools.</p>
           </div>
         </details>
 
