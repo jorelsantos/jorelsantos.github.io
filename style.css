@@ -90,6 +90,14 @@ header.nav {
   color: var(--ink-soft);
   margin: 0 0 2.2rem;
 }
+.hero p a {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--accent);
+  transition: color 0.18s ease;
+}
+.hero p a:hover,
+.hero p a:focus-visible { color: var(--accent); outline: none; }
 .links { display: flex; gap: 1.75rem; flex-wrap: wrap; font-size: 0.92rem; }
 .links a { text-decoration: none; color: var(--ink); position: relative; padding-bottom: 3px; }
 .links a::after {
