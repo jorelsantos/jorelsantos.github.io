@@ -90,19 +90,19 @@
                   <button type="button" class="demo-zoom" aria-label="Enlarge Home screenshot">
                     <img src="assets/demos/vinland/web/01-home-hybrid.webp" width="1170" height="2532" loading="lazy" alt="Vinland phone Home: Up Next pull day, At a Glance with 3 lifts and 2 runs for 6.0 run miles this week" />
                   </button>
-                  <figcaption>One glance for the hybrid week — lifts and runs together</figcaption>
+                  <figcaption>One glance for the week<br />Lifts and run together</figcaption>
                 </figure>
                 <figure class="demo demo--shot">
                   <button type="button" class="demo-zoom" aria-label="Enlarge Strength screenshot">
                     <img src="assets/demos/vinland/web/02-strength-progression.webp" width="1170" height="2532" loading="lazy" alt="Vinland phone Strength: Deadlift top-set progression chart climbing over months plus weekly hard-set volume" />
                   </button>
-                  <figcaption>Progression you can trust — Deadlift top sets over time</figcaption>
+                  <figcaption>Progression you can trust</figcaption>
                 </figure>
                 <figure class="demo demo--shot">
                   <button type="button" class="demo-zoom" aria-label="Enlarge Run screenshot">
                     <img src="assets/demos/vinland/web/03-run-truth.webp" width="1170" height="2532" loading="lazy" alt="Vinland phone Run: recent outdoor runs with distance, pace, and heart rate" />
                   </button>
-                  <figcaption>Running truth beside the barbell — recent efforts and pace</figcaption>
+                  <figcaption>Running data next to your lifting data</figcaption>
                 </figure>
               </div>
               <div class="demo-strip-controls">
@@ -124,19 +124,19 @@
             <span class="chev"></span>
             <p class="year">2025–Present</p>
             <h3 class="etitle">Rabbit Hole</h3>
-            <p class="teaser">Find the shortest collaboration path between any two artists, a discovery feature streaming platforms don't have.</p>
-            <p class="tags">Python · Neo4j · graph algorithms · Spotify data</p>
+            <p class="teaser">A music-discovery app that maps how artists connect through collaborations. First feature: Six Degrees of Kendrick Lamar, the shortest path from any artist to Kendrick, with a playable preview of the connecting song at every step.</p>
+            <p class="tags">Python · MusicBrainz · graph algorithms · Next.js · Cloudflare Workers/D1 · Spotify API</p>
             <span class="node" aria-hidden="true"></span>
           </summary>
           <div class="detail">
-            <p><span class="lead">Context</span>Streaming platforms recommend by genre and popularity, not by how artists connect through collaborations. I wanted to trace the path between any two musicians, who features on whose tracks, and turn it into a way to discover music.</p>
-            <p><span class="lead">What I did</span>Solo builder. I engineered a 119,729-artist collaboration graph from a 30GB archive to replace the rate-limited Spotify API. Before scaling, I ran feasibility spikes: a 67-song preview test that auto-resolved 79% and played back 100%. I gated an 8x graph expansion (14,881 to 119,729 artists) on accuracy and size guardrails before promoting to production.</p>
-            <p><span class="lead">Results</span>A working shortest-path discovery prototype over 119K artists, on architecture I validated before committing to it, not after.</p>
-            <!-- DEMO MEDIA — add files to assets/demos/rabbit-hole/web/, then uncomment & fill alt + caption. Delete unused lines. See assets/demos/README.md. -->
+            <p><span class="lead">Context</span>Streaming platforms recommend by genre and popularity, not by how artists connect through who features on whose tracks. Rabbit Hole fills that gap. Kendrick is the first anchor, and the same engine works for any artist.</p>
+            <p><span class="lead">What I did</span>Solo builder. I designed and built Rabbit Hole on a $0/month serverless stack (a Cloudflare Worker over D1, a Next.js front end for Vercel), engineering a 119,729-artist collaboration graph from a 30GB MusicBrainz dump to replace a rate-limited Spotify API and precomputing every shortest path to Kendrick with one offline BFS. Every hop shows the artist's photo and a 30-second Spotify preview of the connecting song, and clicking any artist mid-chain opens their own path to Kendrick.</p>
+            <p><span class="lead">Results</span>A working product built on an architecture I validated first: a 67-song preview test auto-resolved 79% and played back 100%, and I gated the 8x graph expansion (14,881 to 119,729 artists) on accuracy and size guardrails before promoting to production.</p>
+            <!-- DEMO MEDIA — add files to assets/demos/rabbit-hole/web/, then uncomment & fill in the real alt text (the lead caption is already set). See assets/demos/README.md. -->
             <!--
             <figure class="demo demo--shot">
               <img src="assets/demos/rabbit-hole/web/01-hero.webp" width="1600" height="1000" loading="lazy" alt="TODO describe the screenshot" />
-              <figcaption>TODO one-line caption</figcaption>
+              <figcaption>Running locally. Public showcase coming soon.</figcaption>
             </figure>
             <figure class="demo demo--video">
               <video muted loop playsinline autoplay preload="none" poster="assets/demos/rabbit-hole/web/demo-poster.webp">
