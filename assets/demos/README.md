@@ -30,13 +30,16 @@ When in doubt, crop it out or blur it before it leaves `raw/`.
 
 ## Screenshot specs
 
-- **Format:** WebP, quality ~82 (matches the photo pipeline). Use PNG only if a specific screenshot shows
+- **Format:** WebP, quality ~90 for UI text. Use PNG only if a specific screenshot shows
   text fringing/artifacts in WebP.
-- **Width:** ~1600px content width (retina-sharp at the ~46rem display column). Don't go huge.
-- **File size:** ~150–400KB each after compression.
-- **Aspect ratio:** standardize on **16:10** for app screenshots so all four projects stay consistent.
-- **Treatment:** prefer dark/neutral app views that sit inside the Flexoki Dark theme; the CSS adds a
-  subtle border and rounded corners, so you don't need to add your own frame.
+- **Phone apps (Vinland):** capture **viewport only** at ~390×844 @ deviceScaleFactor 2–3
+  (≈1170×2532). Keep **portrait** — do **not** letterbox into landscape 16:10 (that shrinks
+  the UI to a blurry stamp). Portfolio CSS uses `max-width: ~17.5rem` phone frames.
+- **Wide desktop UIs (future):** ~1600px wide, optional **16:10** crop.
+- **File size:** phone stills often ~70–200KB WebP; keep under ~400KB each.
+- **Treatment:** prefer dark app views that sit inside Flexoki Dark; CSS adds border + shadow.
+  Capture from a **local synthetic demo pack** when live data undercuts the story (empty week,
+  private notes). Never fudge production vault/Render for screenshots.
 
 Optimize with any tool you like. Example with `cwebp`:
 
@@ -93,9 +96,9 @@ uncomment, push.
 
 ## Status
 
-- **Vinland (2026-07-09):** three premium stills shipped in `vinland/web/`
-  (`01-home-hybrid`, `02-strength-progression`, `03-run-truth`). Letterboxed
-  phone captures on Flexoki matte. Video / HyperFrames teaser deferred.
+- **Vinland (2026-07-09 v2):** three **portrait** phone stills from local synthetic
+  hybrid demo pack (`sample_data/portfolio_demo/` in the Vinland repo). Viewport
+  @3×, no landscape letterbox. Video / HyperFrames teaser deferred.
 
 ## Future slot
 
