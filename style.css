@@ -382,6 +382,10 @@ header.nav {
   scroll-snap-align: center;
   scroll-snap-stop: always;
 }
+.detail .demo-strip--wide .demo--video video {
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
 .detail .demo-strip--wide .demo-strip-controls {
   display: flex;
   align-items: center;
