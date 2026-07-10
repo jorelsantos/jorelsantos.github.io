@@ -355,6 +355,88 @@ header.nav {
   .detail .demo-stack { scroll-behavior: auto; }
 }
 
+/* Wide-still variant (Rabbit Hole result chains): a one-at-a-time, full-width
+   horizontal swipe carousel at EVERY width. Big landscape/tall screenshots can't
+   shrink into the 3-up phone row, so this overrides the default grid and always
+   shows carousel chrome (arrows + dots + hint). Vinland's .demo-strip is untouched. */
+.detail .demo-strip--wide .demo-stack {
+  display: flex;
+  grid-template-columns: none;
+  flex-direction: row;
+  gap: 0.85rem;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  align-items: flex-start;
+  padding: 0.5rem 0.15rem 0.7rem;
+  margin: 0;
+}
+.detail .demo-strip--wide .demo-stack::-webkit-scrollbar { display: none; }
+.detail .demo-strip--wide .demo-stack .demo {
+  flex: 0 0 100%;
+  min-width: 0;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+}
+.detail .demo-strip--wide .demo-strip-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-top: 0.9rem;
+}
+.detail .demo-strip--wide .demo-strip-btn {
+  font-family: var(--mono);
+  font-size: 1.15rem;
+  line-height: 1;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  color: var(--ink-soft);
+  cursor: pointer;
+  padding: 0;
+}
+.detail .demo-strip--wide .demo-strip-btn:hover,
+.detail .demo-strip--wide .demo-strip-btn:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  outline: none;
+}
+.detail .demo-strip--wide .demo-strip-dots {
+  display: flex;
+  gap: 0.4rem;
+  align-items: center;
+}
+.detail .demo-strip--wide .demo-strip-dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: var(--line);
+  cursor: pointer;
+}
+.detail .demo-strip--wide .demo-strip-dot.is-active {
+  background: var(--accent);
+  transform: scale(1.15);
+}
+.detail .demo-strip--wide .demo-strip-hint {
+  display: block;
+  text-align: center;
+  font-family: var(--mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  margin: 0.6rem 0 0;
+}
+
 /* ---- photography ---- */
 #photography { margin-top: 5rem; }
 .cat-label {

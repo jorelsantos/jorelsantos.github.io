@@ -132,20 +132,31 @@
             <p><span class="lead">Context</span>Streaming platforms recommend by genre and popularity, not by how artists connect through who features on whose tracks. Rabbit Hole fills that gap. Kendrick is the first anchor, and the same engine works for any artist.</p>
             <p><span class="lead">What I did</span>Solo builder. I designed and built Rabbit Hole on a $0/month serverless stack (a Cloudflare Worker over D1, a Next.js front end for Vercel), engineering a 119,729-artist collaboration graph from a 30GB MusicBrainz dump to replace a rate-limited Spotify API and precomputing every shortest path to Kendrick with one offline BFS. Every hop shows the artist's photo and a 30-second Spotify preview of the connecting song, and clicking any artist mid-chain opens their own path to Kendrick.</p>
             <p><span class="lead">Results</span>A working product built on an architecture I validated first: a 67-song preview test auto-resolved 79% and played back 100%, and I gated the 8x graph expansion (14,881 to 119,729 artists) on accuracy and size guardrails before promoting to production.</p>
-            <!-- DEMO MEDIA — add files to assets/demos/rabbit-hole/web/, then uncomment & fill in the real alt text (the lead caption is already set). See assets/demos/README.md. -->
-            <!--
-            <figure class="demo demo--shot">
-              <img src="assets/demos/rabbit-hole/web/01-hero.webp" width="1600" height="1000" loading="lazy" alt="TODO describe the screenshot" />
-              <figcaption>Running locally. Public showcase coming soon.</figcaption>
-            </figure>
-            <figure class="demo demo--video">
-              <video muted loop playsinline autoplay preload="none" poster="assets/demos/rabbit-hole/web/demo-poster.webp">
-                <source src="assets/demos/rabbit-hole/web/demo.webm" type="video/webm" />
-                <source src="assets/demos/rabbit-hole/web/demo.mp4" type="video/mp4" />
-              </video>
-              <figcaption>TODO 15–20s walkthrough caption</figcaption>
-            </figure>
-            -->
+            <!-- DEMO MEDIA — degree-3 result chains as a full-width swipe carousel (.demo-strip--wide).
+                 Desktop stills captured 2026-07-09 from the local app (1600px WebP). Home reserved for a future video asset. See assets/demos/README.md. -->
+            <div class="demo-strip demo-strip--wide" role="region" aria-roledescription="carousel" aria-label="Rabbit Hole result screenshots">
+              <div class="demo-stack">
+                <figure class="demo demo--shot">
+                  <button type="button" class="demo-zoom" aria-label="Enlarge KATSEYE result">
+                    <img src="assets/demos/rabbit-hole/web/katseye.webp" width="1600" height="1621" loading="lazy" alt="Rabbit Hole result: KATSEYE's (k)dot score is 3, connected to Kendrick Lamar via Ice Spice and Taylor Swift through the songs Gnarly, Karma, and Bad Blood, each a playable Spotify preview" />
+                  </button>
+                </figure>
+                <figure class="demo demo--shot">
+                  <button type="button" class="demo-zoom" aria-label="Enlarge Ella Langley result">
+                    <img src="assets/demos/rabbit-hole/web/ella-langley.webp" width="1600" height="1621" loading="lazy" alt="Rabbit Hole result: Ella Langley's (k)dot score is 3, connected to Kendrick Lamar via Morgan Wallen and Rick Ross through the songs I Can't Love You Anymore, Miami, and I'm Ya Dogg, each a playable Spotify preview" />
+                  </button>
+                </figure>
+              </div>
+              <div class="demo-strip-controls">
+                <button type="button" class="demo-strip-btn" data-demo-dir="-1" aria-label="Previous screenshot">‹</button>
+                <div class="demo-strip-dots" role="tablist" aria-label="Screenshot position">
+                  <button type="button" class="demo-strip-dot is-active" role="tab" aria-selected="true" aria-label="KATSEYE" data-demo-i="0"></button>
+                  <button type="button" class="demo-strip-dot" role="tab" aria-selected="false" aria-label="Ella Langley" data-demo-i="1"></button>
+                </div>
+                <button type="button" class="demo-strip-btn" data-demo-dir="1" aria-label="Next screenshot">›</button>
+              </div>
+              <p class="demo-strip-hint">Public demo coming soon</p>
+            </div>
           </div>
         </details>
 
